@@ -2,5 +2,7 @@
   Example of using Tailwind classes in a CSS file:
 */
 body {
+  text-align: center;
+  padding: 10px;
   @apply bg-slate-800;
 }
