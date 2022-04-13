@@ -1,0 +1,91 @@
+.chatDetail {
+  display: grid;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.p3Body {
+  padding-right: 50%;
+}
+
+/* .shopping {
+    display: flex;
+    position: absolute;
+    top: 70%;
+    right: 65%;
+    height: 25%;
+    padding: 0px;
+    opacity: 0.6;
+    z-index: -1;
+    opacity: 0.5;
+  } */
+
+/* .techSwapImg {
+    position: absolute;
+    height: 160%;
+    right: 36%;
+    top: -25%;
+    border: 2px solid rgb(92, 91, 91);
+  }
+  .techSwapImg1 {
+    position: absolute;
+    height: 160%;
+    right: 21%;
+    top: -25%;
+    border: 2px solid rgb(92, 91, 91);
+  }
+  .techSwapImg2 {
+    position: absolute;
+    height: 160%;
+    right: 6%;
+    top: -25%;
+    border: 2px solid rgb(92, 91, 91);
+  } */
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  will-change: transform, width, height, opacity;
+  opacity: 1;
+  width: 25.125rem;
+  height: 236px;
+  z-index: 1;
+  transform: translate3d(6px, 372px, 0px);
+  background-color: #e3d1a7;
+  transform: 1s;
+}
+
+.chat:hover h1 {
+  opacity: 1;
+}
+
+.chat:hover img {
+  opacity: 1;
+}
+
+.chatBig {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 1634px;
+  height: 614px;
+  background-color: #e3d1a7;
+  transition: 1s;
+}
+
+.chatBig h1 {
+  opacity: 1;
+}
+
+.chatShow {
+  display: flex;
+  position: relative;
+  transition: 1.5s;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
