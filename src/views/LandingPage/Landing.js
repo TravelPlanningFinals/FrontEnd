@@ -3,7 +3,7 @@ import './Landing.css';
 
 export default function Landing() {
   const [date, setDate] = useState('');
-  const [returnDate, endDate] = useState('');
+  const [returnDate, setendDate] = useState('');
 
   return (
     <>
@@ -31,7 +31,7 @@ export default function Landing() {
         placeholder="Ending Date"
         value={returnDate}
         onChange={(e) => {
-          endDate(e.target.value);
+          setendDate(e.target.value);
         }}
       />
       <br></br>
