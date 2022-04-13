@@ -1,0 +1,87 @@
+.entertainmentInfo {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  will-change: transform, width, height, opacity;
+  opacity: 1;
+  width: 25.125rem;
+  height: 298px;
+  z-index: 1;
+  transform: translate3d(821px, 310px, 0px);
+  background-color: #e3d1a7;
+  transition: 1s;
+}
+
+.entertainmentInfo:hover h1 {
+  opacity: 1;
+}
+
+.entertainmentInfoDetail {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.entertainmentInfoSmall {
+  display: flex;
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  height: 35%;
+  padding: 0px;
+  opacity: 0.6;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.entertainmentInfo Small:hover {
+  opacity: 1;
+}
+/*AboutMe*/
+
+.entertainmentInfo:hover h1 {
+  opacity: 1;
+}
+.entertainmentInfo:hover img {
+  opacity: 1;
+}
+
+.entertainmentInfoBig {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 1634px;
+  height: 614px;
+  background-color: #e3d1a7;
+  transition: 1s;
+}
+
+.entertainmentInfoBig h1 {
+  opacity: 1;
+}
+
+.entertainmentInfoShow {
+  display: flex;
+  position: relative;
+  transition: 1.5s;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+/* .entertainmentInfoImg {
+      display: flex;
+      position: absolute;
+      top: -5rem;
+      right: -57rem;
+      height: 30rem;
+    }
+    
+    .Xresume {
+      max-width: 65px;
+      position: absolute;
+      top: -7rem;
+      right: -101rem;
+    }
+     */

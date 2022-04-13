@@ -6,7 +6,7 @@ export default function Landing() {
   const [date, setDate] = useState('');
   const [returnDate, setendDate] = useState('');
 
-  fetchYelp();
+  // fetchYelp();
 
   return (
     <>

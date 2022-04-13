@@ -14,6 +14,6 @@ export async function fetchYelp() {
 
   const data = await resp.json();
 
-  console.log('data', data.businesses[0].name);
+  console.log('data', data);
   return data;
 }
