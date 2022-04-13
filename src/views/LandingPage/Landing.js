@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { fetchYelp } from '../../services/yelp';
 import './Landing.css';
 
 export default function Landing() {
   const [date, setDate] = useState('');
   const [returnDate, setendDate] = useState('');
+
+  fetchYelp();
 
   return (
     <>
