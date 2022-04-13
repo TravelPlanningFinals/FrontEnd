@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css'; /* Global CSS */
 import styles from './App.module.css'; /* CSS Modules */
 import Footer from './components/Footer/Footer';
-import Header from './components/header/header';
+import Header from './components/Header/Header';
 import AboutUs from './views/About Us/AboutUs';
 import Login from './views/Auth/Login';
 import Landing from './views/LandingPage/Landing';
