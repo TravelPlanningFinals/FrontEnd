@@ -6,6 +6,8 @@ export default function Landing() {
   const [date, setDate] = useState('');
   const [returnDate, setendDate] = useState('');
 
+  // Wrap in a use effect
+
   // fetchYelp();
 
   return (
