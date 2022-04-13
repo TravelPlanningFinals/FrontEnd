@@ -1,6 +1,6 @@
 export async function fetchYelp() {
   const resp = await fetch(
-    'https://cors-anywhere-travel.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=NYC',
+    'https://cors-anywhere-travel.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Reno',
     {
       headers: {
         Authorization: `Bearer ${process.env.YELP_API}`,
@@ -14,6 +14,6 @@ export async function fetchYelp() {
 
   const data = await resp.json();
 
-  console.log('data', data);
+  console.log('data', data.businesses[0].name);
   return data;
 }
