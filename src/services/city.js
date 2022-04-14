@@ -1,6 +1,6 @@
-const client = `${process.env.HEORKU_URL}/api/v1/trips`;
+const client = `${process.env.HEROKU_URL}/api/v1/trips`;
 
-export async function addCity(location) {
+export async function addTrip(location) {
   const resp = await client.from('trips').insert({
     location,
     start_date,
@@ -8,5 +8,6 @@ export async function addCity(location) {
     trips_id: client.auth.users_id().id,
   });
 
+  console.log('resp', resp);
   return resp;
 }

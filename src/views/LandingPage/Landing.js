@@ -1,45 +1,36 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import TripForm from '../../components/Forms/tripForm';
+import { addTrip } from '../../services/city';
 import './Landing.css';
 
 export default function Landing() {
-  const [date, setDate] = useState('');
-  const [returnDate, setendDate] = useState('');
+  const [location, setLocation] = useState('');
+  const [start_date, setStart_date] = useState('');
+  const [end_date, setEnd_date] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await addTrip(location, start_date, end_date);
+    } catch {
+      alert('Failed to add a Trip');
+    }
+    <Redirect to="/plan" />;
+  };
 
   return (
-    <>
-      <h1>start your next adventure</h1>
-      <div className="landingCard">
-        <h2>Destination City</h2>
-        <input placeholder="location"></input>
-        <h2> Destination State </h2>
-        <input placeholder="state"></input>
-        <mark>Trip Starting Date:</mark>
-        <input
-          className="controls"
-          type="date"
-          placeholder="Starting Date"
-          value={date}
-          onChange={(e) => {
-            setDate(e.target.value);
-          }}
-        />
-        <mark className="end">Trip Ending Date:</mark>
-
-        <input
-          className="controls"
-          type="date"
-          placeholder="Ending Date"
-          value={returnDate}
-          onChange={(e) => {
-            setendDate(e.target.value);
-          }}
-        />
-        <br></br>
-
-        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-          Plan your trip
-        </button>
-      </div>
-    </>
+    <div>
+      <h1>Plan a Trip</h1>
+      <TripForm
+        location={location}
+        setLocation={setLocation}
+        start_date={start_date}
+        setStart_date={setStart_date}
+        end_date={end_date}
+        setEnd_date={setEnd_date}
+        handleSubmit={handleSubmit}
+      />
+    </div>
   );
 }
