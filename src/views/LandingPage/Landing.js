@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+// import TripForm from '../../components/Forms/TripForm';
 import TripForm from '../../components/Forms/TripForm';
 import { addTrip } from '../../services/city';
 import './Landing.css';
