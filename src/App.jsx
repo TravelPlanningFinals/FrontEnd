@@ -17,14 +17,19 @@ export default function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <Landing />
+            {/* <Landing /> */}
+            <Login />
           </Route>
           <Route exact path="/aboutus">
             <AboutUs />
           </Route>
-          <Route path="/login">
-            <Login />
+
+          {/* <Route path="/login"> */}
+          <Route path="/landing">
+            {/* <Login /> */}
+            <Landing />
           </Route>
+
           <Route path="/register">
             <Login isSigningUp />
           </Route>

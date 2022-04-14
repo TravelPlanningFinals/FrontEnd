@@ -1,0 +1,87 @@
+.lodgingStyle {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  will-change: transform, width, height, opacity;
+  opacity: 1;
+  width: 25.125rem;
+  height: 298px;
+  z-index: 1;
+  transform: translate3d(1227px, 310px, 0px);
+  background-color: #e3d1a7;
+  transition: 1s;
+}
+
+.lodgingStyle:hover h1 {
+  opacity: 1;
+}
+
+.lodgingStyleDetail {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.lodgingStyleSmall {
+  display: flex;
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  height: 35%;
+  padding: 0px;
+  opacity: 0.6;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.lodgingStyle Small:hover {
+  opacity: 1;
+}
+/*AboutMe*/
+
+.lodgingStyle:hover h1 {
+  opacity: 1;
+}
+.lodgingStyle:hover img {
+  opacity: 1;
+}
+
+.lodgingStyleBig {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 1634px;
+  height: 614px;
+  background-color: #e3d1a7;
+  transition: 1s;
+}
+
+.lodgingStyleBig h1 {
+  opacity: 1;
+}
+
+.lodgingStyleShow {
+  display: flex;
+  position: relative;
+  transition: 1.5s;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+/* .lodgingStyleImg {
+        display: flex;
+        position: absolute;
+        top: -5rem;
+        right: -57rem;
+        height: 30rem;
+      }
+      
+      .Xresume {
+        max-width: 65px;
+        position: absolute;
+        top: -7rem;
+        right: -101rem;
+      }
+       */
