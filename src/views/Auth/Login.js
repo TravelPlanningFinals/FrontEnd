@@ -4,8 +4,8 @@ import './Login.css';
 export default function Login() {
   return (
     <div className="login">
-      <h2>Sign in with Github OAuth</h2>
-      <button class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-#a2e3c4-500 hover:border-transparent rounded">
+      <h2 className="signin-message">Sign in with Github OAuth</h2>
+      <button class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-#a2e3c4-500 hover:border-transparent rounded m-6">
         {/* <a href={'https://travelapp70.herokuapp.com/api/v1/github/login'}> */}
         {/* !!!!!this link above auto deploys MAIN branch. We need to activate this one, and disable the one below for presentation !!!!!*/}
 

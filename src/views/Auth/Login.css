@@ -1,13 +1,19 @@
 .login {
   display: flex;
   flex-direction: column;
-  width: 15vw;
-  margin: auto;
+  align-items: center;
   border: 2px solid #3c493f;
   border-radius: 6px;
-  padding: 4px;
+  gap: 2vh;
+  width: 26vw;
+  margin-left: 37vw;
+  margin-right: 37vw;
+  margin-top: 20vw;
+  margin-bottom: 20vw;
+  align-items: center;
+  text-align: center;
 }
 
-.signin-button {
-  color: #a2e3c4;
+.signin-message {
+  margin: 1vw;
 }
