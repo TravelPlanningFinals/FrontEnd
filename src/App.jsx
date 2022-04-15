@@ -16,10 +16,11 @@ export default function App() {
       <Header />
       <main>
         <Switch>
+          {/* <Landing /> */}
           <Route exact path="/">
-            {/* <Landing /> */}
             <Login />
           </Route>
+
           <Route exact path="/aboutus">
             <AboutUs />
           </Route>
@@ -33,9 +34,11 @@ export default function App() {
           <Route path="/register">
             <Login isSigningUp />
           </Route>
+
           <Route path="/trips">
             <Trips />
           </Route>
+
           <Route path="/plan">
             <PlanPage />
           </Route>
