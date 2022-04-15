@@ -5,4 +5,5 @@ body {
   text-align: center;
   padding: 10px;
   @apply bg-slate-800;
+  background-color: #b3bfb8;
 }

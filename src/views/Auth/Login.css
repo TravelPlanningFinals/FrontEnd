@@ -1,0 +1,13 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  margin: auto;
+  border: 2px solid #3c493f;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.signin-button {
+  color: #a2e3c4;
+}
