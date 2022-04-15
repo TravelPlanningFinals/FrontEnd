@@ -4,6 +4,7 @@ import './App.css'; /* Global CSS */
 import styles from './App.module.css'; /* CSS Modules */
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import { UserProvider } from './context/UserProvider';
 import AboutUs from './views/About Us/AboutUs';
 import Login from './views/Auth/Login';
 import Landing from './views/LandingPage/Landing';
@@ -15,34 +16,36 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <main>
-        <Switch>
-          {/* <Landing /> */}
-          <Route exact path="/">
-            <Login />
-          </Route>
+        <UserProvider>
+          <Switch>
+            {/* <Landing /> */}
+            <Route exact path="/">
+              <Login />
+            </Route>
 
-          <Route exact path="/aboutus">
-            <AboutUs />
-          </Route>
+            <Route exact path="/aboutus">
+              <AboutUs />
+            </Route>
 
-          {/* <Route path="/login"> */}
-          <Route path="/landing">
-            {/* <Login /> */}
-            <Landing />
-          </Route>
+            {/* <Route path="/login"> */}
+            <Route path="/landing">
+              {/* <Login /> */}
+              <Landing />
+            </Route>
 
-          <Route path="/register">
-            <Login isSigningUp />
-          </Route>
+            <Route path="/register">
+              <Login isSigningUp />
+            </Route>
 
-          <Route path="/trips">
-            <Trips />
-          </Route>
+            <Route path="/trips">
+              <Trips />
+            </Route>
 
-          <Route path="/plan">
-            <PlanPage />
-          </Route>
-        </Switch>
+            <Route path="/plan">
+              <PlanPage />
+            </Route>
+          </Switch>
+        </UserProvider>
       </main>
       <Footer />
     </BrowserRouter>
