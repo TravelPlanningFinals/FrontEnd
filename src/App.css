@@ -1,6 +1,7 @@
-/*
-  Example of using Tailwind classes in a CSS file:
-*/
+html {
+  position: relative;
+}
+
 body {
   text-align: center;
   padding: 10px;
