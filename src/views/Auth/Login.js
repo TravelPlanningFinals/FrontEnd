@@ -19,7 +19,9 @@ export default function Login() {
         /*onClick={app.use('/api/v1/github', require('./controllers/github'))}*/
         class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
       >
-        <Link to="/login">Sign in with Github</Link>
+        <a href={'https://travelapp70.herokuapp.com/api/v1/github/login'}>
+          Sign in with Github
+        </a>
       </button>
     </div>
   );

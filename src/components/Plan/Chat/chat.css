@@ -50,9 +50,9 @@
   will-change: transform, width, height, opacity;
   opacity: 1;
   width: 25.125rem;
-  height: 236px;
+  height: 238px;
   z-index: 1;
-  transform: translate3d(6px, 372px, 0px);
+  transform: translate3d(6px, 370px, 0px);
   background-color: #e3d1a7;
   transform: 1s;
 }
