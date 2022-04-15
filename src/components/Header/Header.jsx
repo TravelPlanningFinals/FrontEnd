@@ -5,6 +5,7 @@ export default function Header() {
   return (
     <div>
       <Link to="/">Back to Home (this is header)</Link>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 }
