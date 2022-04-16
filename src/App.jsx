@@ -4,6 +4,7 @@ import './App.css'; /* Global CSS */
 import styles from './App.module.css'; /* CSS Modules */
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { UserProvider } from './context/UserProvider';
 import AboutUs from './views/About Us/AboutUs';
 import Login from './views/Auth/Login';
@@ -41,9 +42,13 @@ export default function App() {
               <Trips />
             </Route>
 
-            <Route path="/plan">
+            <PrivateRoute path="/plan">
               <PlanPage />
-            </Route>
+            </PrivateRoute>
+
+            {/* <Route path="/plan">
+              <PlanPage />
+            </Route> */}
           </Switch>
         </UserProvider>
       </main>

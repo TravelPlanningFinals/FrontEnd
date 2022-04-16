@@ -3,12 +3,11 @@ import { Route } from 'react-router-dom';
 import { useUser } from '../../context/UserProvider';
 
 export default function PrivateRoute({ children, ...routeProps }) {
-  const authUser = { useUser };
+  const { user, loading } = useUser();
 
   return (
-      <Route {...routeProps}>
-          {authUser.username ? children : <Redirect to='/' />}
-      </Route>
+    <Route {...routeProps}>
+      {!loading && !user ? <Redirect to="/" /> : children}
+    </Route>
   );
-  )
 }
