@@ -1,13 +1,16 @@
-const client = `${process.env.HEROKU_URL}/api/v1/trips`;
+//delete if fetchuser is not used in userProvider
 
-function parseData({ data, error }) {
-  if (error) throw error;
-  return data[0];
-}
+// const client = `${process.env.HEROKU_URL}/api/v1/users`;
 
-const fetchUser = async () => {
-  const userData = await client.from('users').select();
-  return parseData(userData);
-};
+// function parseData({ data, error }) {
+//   if (error) throw error;
+//   return data[0];
+// }
 
-export default fetchUser;
+// const fetchUser = async () => {
+//   const userData = await client.from('users').select();
+//   return parseData(userData);
+// };
+// console.log('fetchUser()', fetchUser());
+
+// export default fetchUser;
