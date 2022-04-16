@@ -5,7 +5,6 @@ import AuthLogin from '../../components/Auth/AuthLogin';
 export default function Login() {
   return (
     <div>
-      fetchUser();
       <AuthLogin />
       <p>this page is Login.js in views/auth</p>
       {/* <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
