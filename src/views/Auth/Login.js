@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AuthLogin from '../../components/Auth/AuthLogin';
 
 export default function Login() {
   return (
     <div>
-      <AuthLogin />
       <p>this page is Login.js in views/auth</p>
       {/* <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
         <Link to="/register">Sign Up</Link>
