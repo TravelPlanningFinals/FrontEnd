@@ -1,22 +1,32 @@
 import React, { useState } from 'react';
 import LodgingDetails from '../../components/Plan/Lodging/LodgingDetails';
+import X from '../../assets/images/X.png';
 
 export default function Lodging() {
-  const [lodgingStyle, setStyle] = useState('lodgingStyle');
+  const [style, setStyle] = useState('lodgingStyle');
   const [hidden, setHidden] = useState('hidden');
-  const ToggleClass = () => {
-    setStyle(!lodgingStyle);
-    setHidden(!hidden);
-  };
+  const [XStyle, setXStyle] = useState('hidden');
+
+  function handleClick() {
+    setStyle('lodgingStyleBig');
+    setHidden(null);
+    setXStyle('X');
+  }
+
+  function minimize() {
+    setStyle('lodgingStyle');
+    setHidden('hidden');
+    setXStyle('hidden');
+  }
 
   return (
-    <div
-      onClick={ToggleClass}
-      className={lodgingStyle ? 'lodgingStyle' : 'lodgingStyleBig'}
-    >
-      <h1 className="padding">Lodging Page</h1>
-      <div className={hidden ? 'hidden' : 'lodgingStyleShow'}>
-        <LodgingDetails />
+    <div>
+      <img onClick={minimize} src={X} class={XStyle}></img>
+      <div onClick={handleClick} className={style}>
+        <h1 className="padding">Lodging Page</h1>
+        <div className={hidden}>
+          <LodgingDetails />
+        </div>
       </div>
     </div>
   );

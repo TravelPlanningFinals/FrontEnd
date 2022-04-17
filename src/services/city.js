@@ -8,6 +8,5 @@ export async function addTrip(location) {
     trips_id: client.auth.users_id().id,
   });
 
-  console.log('resp', resp);
   return resp;
 }
