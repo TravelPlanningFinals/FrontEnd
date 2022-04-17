@@ -47,8 +47,9 @@ planningBody h1 {
 .X {
   max-width: 65px;
   position: absolute;
-  top: -40%;
-  right: 1%;
+  top: 10%;
+  right: 10%;
+  z-index: 20;
 }
 
 @keyframes fadeIn {
