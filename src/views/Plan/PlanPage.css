@@ -52,6 +52,10 @@ planningBody h1 {
   z-index: 20;
 }
 
+.X:hover {
+  cursor: pointer;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
