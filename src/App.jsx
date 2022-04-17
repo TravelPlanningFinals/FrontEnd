@@ -10,7 +10,7 @@ import AboutUs from './views/About Us/AboutUs';
 import Login from './views/Auth/Login';
 import Landing from './views/LandingPage/Landing';
 import PlanPage from './views/Plan/PlanPage';
-// import Trips from './views/Trips/Trips';
+import Trips from './views/Trips/Trips';
 
 export default function App() {
   return (
