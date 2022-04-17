@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
 import GroupDetails from '../../components/Plan/Group/GroupDetails';
+import X from '../../assets/images/X.png';
 
 export default function Group() {
-  const [group, setStyle] = useState('group');
+  const [style, setStyle] = useState('group');
   const [hidden, setHidden] = useState('hidden');
-  const ToggleClass = () => {
-    setStyle(!group);
-    setHidden(!hidden);
-  };
+  const [XStyle, setXStyle] = useState('hidden');
+
+  function handleClick() {
+    setStyle('groupBig');
+    setHidden(null);
+    setXStyle('X');
+  }
+
+  function minimize() {
+    setStyle('group');
+    setHidden('hidden');
+    setXStyle('hidden');
+  }
 
   return (
-    <div onClick={ToggleClass} className={group ? 'group' : 'groupBig'}>
-      <h1 className="padding">Group Page</h1>
-      <div className={hidden ? 'hidden' : 'groupShow'}>
-        <GroupDetails />
+    <div>
+      <img onClick={minimize} src={X} class={XStyle}></img>
+      <div onClick={handleClick} className={style}>
+        <h1 className="padding">Group Page</h1>
+        <div className={hidden}>
+          <GroupDetails />
+        </div>
       </div>
     </div>
   );

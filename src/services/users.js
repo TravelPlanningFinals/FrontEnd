@@ -7,3 +7,18 @@ export const signOut = async () => {
 
   return res.ok;
 };
+
+export const getCurrentUser = async () => {
+  try {
+    const res = await fetch(`${process.env.HEROKU_URL}/api/v1/github/me`, {
+      method: 'GET',
+      credentials: 'include',
+      mode: 'cors',
+    });
+    console.log('res', res);
+    return res.json();
+  } catch (error) {
+    console.log('error', error);
+    return null;
+  }
+};

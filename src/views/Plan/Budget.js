@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
 import BudgetDetails from '../../components/Plan/Budget/BudgetDetails';
+import X from '../../assets/images/X.png';
 
 export default function Budget() {
-  const [budgetStyle, setStyle] = useState('budgetStyle');
+  const [style, setStyle] = useState('budgetStyle');
   const [hidden, setHidden] = useState('hidden');
-  const ToggleClass = () => {
-    setStyle(!budgetStyle);
-    setHidden(!hidden);
-  };
+  const [XStyle, setXStyle] = useState('hidden');
 
+  function handleClick() {
+    setStyle('budgetStyleBig');
+    setHidden(null);
+    setXStyle('X');
+  }
+
+  function minimize() {
+    setStyle('budgetStyle');
+    setHidden('hidden');
+    setXStyle('hidden');
+  }
   return (
-    <div
-      onClick={ToggleClass}
-      className={budgetStyle ? 'budgetStyle' : 'budgetStyleBig'}
-    >
-      <h1 className="padding">Budget Page</h1>
-      <div className={hidden ? 'hidden' : 'budgetStyleShow'}>
-        <BudgetDetails />
+    <div>
+      <img onClick={minimize} src={X} class={XStyle}></img>
+      <div onClick={handleClick} className={style}>
+        <h1 className="padding">Budget Page</h1>
+        <div className={hidden}>
+          <BudgetDetails />
+        </div>
       </div>
     </div>
   );
