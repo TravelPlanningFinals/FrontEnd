@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
 import ChatDetails from '../../components/Plan/Chat/ChatDetails';
+import X from '../../assets/images/X.png';
 
 export default function Chat() {
-  const [chat, setStyle] = useState('chat');
+  const [style, setStyle] = useState('chat');
   const [hidden, setHidden] = useState('hidden');
-  const ToggleClass = () => {
-    setStyle(!chat);
-    setHidden(!hidden);
-  };
+  const [XStyle, setXStyle] = useState('hidden');
+
+  function handleClick() {
+    setStyle('chatBig');
+    setHidden(null);
+    setXStyle('X');
+  }
+
+  function minimize() {
+    setStyle('chat');
+    setHidden('hidden');
+    setXStyle('hidden');
+  }
 
   return (
-    <div onClick={ToggleClass} className={chat ? 'chat' : 'chatBig'}>
-      <h1 className="padding">Chat Page</h1>
-      <div className={hidden ? 'hidden' : 'chatShow'}>
-        <ChatDetails />
+    <div>
+      <img onClick={minimize} src={X} class={XStyle}></img>
+      <div onClick={handleClick} className={style}>
+        <h1 className="padding">Chat Page</h1>
+        <div className={hidden}>
+          <ChatDetails />
+        </div>
       </div>
     </div>
   );
