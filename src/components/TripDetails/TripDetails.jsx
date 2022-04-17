@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import './TripDetails.css';
 // import { useTrips } from '../../context/TripContext';
 // import { useHistory } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ export default function TripDetails() {
 
   return (
     <>
-      <div>
+      <div className="trip-form">
         <h2>Start Your Adventure</h2>
         <form>
           <label>Location: </label>
@@ -25,7 +26,7 @@ export default function TripDetails() {
               setLocationText(e.target.value);
             }}
           />
-          <label> Start Date: </label>
+          <label>Start Date: </label>
           <input
             className="dates"
             type="date"
@@ -55,7 +56,7 @@ export default function TripDetails() {
             <option value="3"></option>
             <option value="4"></option> */}
         </form>
-        <button class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+        <button class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5">
           Plan Your Trip
         </button>
       </div>
