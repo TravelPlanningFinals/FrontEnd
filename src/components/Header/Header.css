@@ -4,3 +4,11 @@
   margin-right: 2vw;
   margin-left: 2vw;
 }
+
+.sign-out:hover {
+  color: #a2e3c4;
+}
+
+.back-to-trips:hover {
+  color: #a2e3c4;
+}
