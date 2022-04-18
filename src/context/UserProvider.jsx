@@ -20,7 +20,6 @@ const UserProvider = ({ children }) => {
       .then((user) => setUser(user))
       .finally(() => setLoading(false));
   }, []);
-  console.log('user', user);
 
   const contextValue = { user, loading };
 

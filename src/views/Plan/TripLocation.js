@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import TripLocationDetails from '../../components/Plan/TripLocation/TripLocationDetails';
 import X from '../../assets/images/X.png';
+import { useUser } from '../../context/UserProvider';
 
 export default function TripLocation() {
   const [style, setStyle] = useState('tripInfo');
   const [hidden, setHidden] = useState('hidden');
   const [XStyle, setXStyle] = useState('hidden');
-  // const ToggleClass = () => {
-  //   // setStyle(!tripInfo);
-  //   // setHidden(!hidden);
-  //   setStyle(tripInfoBig);
-  //   setHidden(hidden);
-  // };
 
   function handleClick() {
     setStyle('tripInfoBig');
