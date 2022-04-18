@@ -32,7 +32,8 @@
     border: 2px solid rgb(92, 91, 91);
   } */
 
-.group {
+/* Leave below if we go back to 4 tiles */
+/* .group {
   display: flex;
   justify-content: center;
   font-size: xx-large;
@@ -45,6 +46,20 @@
   height: 300px;
   z-index: 1;
   transform: translate3d(820px, 6px, 0px);
+  background-color: #e3d1a7;
+  transition: 1s;
+} */
+
+.group {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  will-change: transform, width, height, opacity;
+  opacity: 1;
+  width: 25.125rem;
+  height: 300px;
+  z-index: 1;
+  transform: translate3d(1227px, 6px, 0px);
   background-color: #e3d1a7;
   transition: 1s;
 }

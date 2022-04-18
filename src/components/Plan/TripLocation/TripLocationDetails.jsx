@@ -6,8 +6,6 @@ export default function TripLocationDetails() {
   // --- Need to use this context below ----
   const { user } = useUser();
 
-  console.log('user', user);
-
   return (
     <div class="tripCard">
       <div>Trip Location Page</div>
