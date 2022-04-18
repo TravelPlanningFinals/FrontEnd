@@ -30,6 +30,7 @@ export default function LodgingDetails() {
       </div>
       <div>
         {/* --- to check_in and check_out in loding --- */}
+        {/* --- Change to date inputs --- */}
         <h1>Check in date</h1>
         <input placeholder="Check in Date" />
         <h1>Check out date</h1>
