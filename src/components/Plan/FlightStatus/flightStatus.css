@@ -85,3 +85,18 @@
     right: -101rem;
   }
    */
+
+.flightInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.emergencyContacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.phoneInputs {
+  display: flex;
+  flex-direction: column;
+}

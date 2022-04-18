@@ -3,3 +3,7 @@
   bottom: 0.5vw;
   right: 2vw;
 }
+
+.footer:hover {
+  color: #a2e3c4;
+}

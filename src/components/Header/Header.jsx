@@ -9,8 +9,8 @@ export default function Header() {
       <div className="back-to-trips">
         <Link to="/trips">Back to your trips</Link>
       </div>
-      <div className="logout">
-        <button onClick={signOut}>Logout</button>
+      <div className="sign-out">
+        <button onClick={signOut}>Sign Out</button>
       </div>
     </div>
   );
