@@ -9,7 +9,8 @@ export default function TripLocation() {
   const [hidden, setHidden] = useState('hidden');
   const [XStyle, setXStyle] = useState('hidden');
   const [image, setImage] = useState('travel');
-  const { user } = useUser();
+  // --- Need to turn context into City context or pull from back end---
+  // const { user } = useUser();
 
   function handleClick() {
     setStyle('tripInfoBig');
@@ -30,6 +31,7 @@ export default function TripLocation() {
       <img onClick={minimize} src={X} class={XStyle}></img>
       <div onClick={handleClick} className={style}>
         {/* pull from back end */}
+        {/* --- Context of City name goes here --- */}
         <h1 className="padding">CITY going to</h1>
         <img src={travel} class={image}></img>
         <div className={hidden}>

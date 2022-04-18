@@ -9,13 +9,6 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // fetchUser()
-    //   .then((fetchedUser) => {
-    //     setUser(fetchedUser);
-    //   })
-    //   .catch((error) => {
-    //     throw new Error(`Error: ${error}`);
-    //   });
     getCurrentUser()
       .then((user) => setUser(user))
       .finally(() => setLoading(false));

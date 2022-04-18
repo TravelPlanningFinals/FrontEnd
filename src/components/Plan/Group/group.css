@@ -12,17 +12,17 @@
   padding-right: 50%;
 }
 
-/* .bookstore {
+.groupImg {
   display: flex;
   position: absolute;
-  top: 5%;
-  right: 65%;
-  height: 50%;
+  top: 0%;
+  right: 17%;
+  height: 90%;
   padding: 0px;
   opacity: 0.6;
   z-index: -1;
   opacity: 0.4;
-} */
+}
 
 /* .ermImg {
     position: absolute;
@@ -34,6 +34,9 @@
 
 .group {
   display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  font-weight: 700;
   align-items: flex-end;
   position: absolute;
   will-change: transform, width, height, opacity;
@@ -75,4 +78,18 @@
   transition: 1.5s;
   animation-name: fadeIn;
   animation-duration: 2s;
+}
+
+.groupInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.emailInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.groupCard {
+  display: flex;
 }
