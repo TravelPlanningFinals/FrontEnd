@@ -22,11 +22,13 @@ export default function TripsCard() {
       {trips.map((trips) => {
         return (
           <div className="tripsList" key={trips.id}>
-            <h1 className="tripLocation">Destination: {trips.location}</h1>
             <Link className="tripLink" to={`/plan/${trips.id}`}>
-              <p className="tripStartDate">Start Date: {trips.startDate}</p>
-              <p className="tripEndDate">End Date: {trips.endDate}</p>
+              <mark className="tripLocation">
+                Destination: {trips.location}
+              </mark>
             </Link>
+            <p className="tripStartDate">Start Date: {trips.startDate}</p>
+            <p className="tripEndDate">End Date: {trips.endDate}</p>
           </div>
         );
       })}
