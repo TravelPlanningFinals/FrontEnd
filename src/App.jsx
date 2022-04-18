@@ -9,7 +9,6 @@ import { TripProvider } from './context/TripProvider';
 import { UserProvider } from './context/UserProvider';
 import AboutUs from './views/About Us/AboutUs';
 import Login from './views/Auth/Login';
-import Landing from './views/LandingPage/Landing';
 import PlanPage from './views/Plan/PlanPage';
 import Trips from './views/Trips/Trips';
 
@@ -28,12 +27,6 @@ export default function App() {
 
               <Route exact path="/aboutus">
                 <AboutUs />
-              </Route>
-
-              {/* <Route path="/login"> */}
-              <Route path="/landing">
-                {/* <Login /> */}
-                <Landing />
               </Route>
 
               <Route path="/register">
