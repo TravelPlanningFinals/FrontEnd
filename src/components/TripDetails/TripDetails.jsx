@@ -31,6 +31,7 @@ export default function TripDetails() {
     //   },
     // ]);
   };
+
   return (
     <>
       <div className="trip-form">
