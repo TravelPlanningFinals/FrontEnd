@@ -44,7 +44,7 @@ export default function App() {
                 <Trips />
               </Route>
 
-              <PrivateRoute path="/plan">
+              <PrivateRoute path="/plan/:id">
                 <PlanPage />
               </PrivateRoute>
 
