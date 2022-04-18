@@ -21,7 +21,9 @@ export default function Budget() {
   return (
     <div>
       <img onClick={minimize} src={X} class={XStyle}></img>
-      <div onClick={handleClick} className={style}>
+      <div onClick={handleClick} className="hidden">
+        {/* --- Bring back in if we go back to 4 tiles --- */}
+        {/* <div onClick={handleClick} className={style}> */}
         <h1 className="padding">Budget Page</h1>
         <div className={hidden}>
           <BudgetDetails />

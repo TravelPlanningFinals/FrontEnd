@@ -16,9 +16,9 @@
 .travel {
   display: flex;
   position: absolute;
-  top: 15%;
-  right: 20%;
-  height: 75%;
+  top: 25%;
+  right: 15%;
+  height: 50%;
   padding: 0px;
   opacity: 0.6;
   z-index: -1;
@@ -37,9 +37,10 @@
   position: absolute;
   will-change: transform, width, height, opacity;
   opacity: 1;
-  /* width: 402px; */
   width: 25.125rem;
-  height: 360px;
+  /* --- change below for 4x4 tiles --- */
+  /* height: 360px; */
+  height: 602px;
   z-index: 1;
   transform: translate3d(6px, 6px, 0px);
   background-color: #e3d1a7;
