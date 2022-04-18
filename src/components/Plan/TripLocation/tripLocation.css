@@ -3,27 +3,27 @@
   padding-right: 4rem;
 }
 
-/* .computer {
-    display: flex;
-    position: absolute;
-    top: 112%;
-    right: 0%;
-    height: 50%;
-    padding: 0px;
-    opacity: 0.6;
-  }
-  
-  .computerSmall {
-    display: flex;
-    position: absolute;
-    top: 75%;
-    right: 0%;
-    height: 25%;
-    padding: 0px;
-    opacity: 0.6;
-    z-index: -1;
-    opacity: 0.5;
-  } */
+/* .travel {
+  display: flex;
+  position: absolute;
+  top: 112%;
+  right: 0%;
+  height: 50%;
+  padding: 0px;
+  opacity: 0.6;
+} */
+
+.travel {
+  display: flex;
+  position: absolute;
+  top: 15%;
+  right: 20%;
+  height: 75%;
+  padding: 0px;
+  opacity: 0.6;
+  z-index: -1;
+  opacity: 0.5;
+}
 
 /* .computerSmall:hover {
     opacity: 1;
@@ -76,4 +76,16 @@
   transition: 1.5s;
   animation-name: fadeIn;
   animation-duration: 2s;
+}
+
+.tripCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  display: flex;
+  font-size: larger;
+  font-weight: 700;
 }
