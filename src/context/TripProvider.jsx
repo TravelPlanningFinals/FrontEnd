@@ -14,7 +14,7 @@ const useTrips = () => {
   const context = useContext(TripContext);
 
   if (context === undefined) {
-    throw new Error('has to be within an TripConext Provider');
+    throw new Error('has to be within an TripContext Provider');
   }
   return context;
 };
