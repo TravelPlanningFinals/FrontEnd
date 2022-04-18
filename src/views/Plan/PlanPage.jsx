@@ -8,7 +8,7 @@ import Group from './Group';
 import Lodging from './Lodging';
 import TripLocation from './TripLocation';
 import './PlanPage.css';
-import { getTripsById } from '../../services/params';
+import { getTripsById } from '../../services/trips';
 import { useParams } from 'react-router-dom';
 
 //renders trip.js
