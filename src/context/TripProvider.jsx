@@ -6,9 +6,7 @@ const TripProvider = ({ children }) => {
   const [trips, setTrips] = useState([]);
   const contextValue = { trips, setTrips };
   return (
-    <TripProvider.Provider value={contextValue}>
-      {children}
-    </TripProvider.Provider>
+    <TripContext.Provider value={contextValue}>{children}</TripContext.Provider>
   );
 };
 

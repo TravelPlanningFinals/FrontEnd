@@ -5,6 +5,7 @@ import './App.css'; /* Global CSS */
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { TripProvider } from './context/TripProvider';
 import { UserProvider } from './context/UserProvider';
 import AboutUs from './views/About Us/AboutUs';
 import Login from './views/Auth/Login';
@@ -18,38 +19,40 @@ export default function App() {
       <Header />
       <main>
         <UserProvider>
-          <Switch>
-            {/* <Landing /> */}
-            <Route exact path="/">
-              <Login />
-            </Route>
+          <TripProvider>
+            <Switch>
+              {/* <Landing /> */}
+              <Route exact path="/">
+                <Login />
+              </Route>
 
-            <Route exact path="/aboutus">
-              <AboutUs />
-            </Route>
+              <Route exact path="/aboutus">
+                <AboutUs />
+              </Route>
 
-            {/* <Route path="/login"> */}
-            <Route path="/landing">
-              {/* <Login /> */}
-              <Landing />
-            </Route>
+              {/* <Route path="/login"> */}
+              <Route path="/landing">
+                {/* <Login /> */}
+                <Landing />
+              </Route>
 
-            <Route path="/register">
-              <Login isSigningUp />
-            </Route>
+              <Route path="/register">
+                <Login isSigningUp />
+              </Route>
 
-            <Route path="/trips">
-              <Trips />
-            </Route>
+              <Route path="/trips">
+                <Trips />
+              </Route>
 
-            <PrivateRoute path="/plan">
-              <PlanPage />
-            </PrivateRoute>
+              <PrivateRoute path="/plan">
+                <PlanPage />
+              </PrivateRoute>
 
-            {/* <Route path="/plan">
+              {/* <Route path="/plan">
               <PlanPage />
             </Route> */}
-          </Switch>
+            </Switch>
+          </TripProvider>
         </UserProvider>
       </main>
       <Footer />
