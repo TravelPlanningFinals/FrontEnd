@@ -30,3 +30,14 @@ export async function getAllTrips() {
     console.log('error', error);
   }
 }
+
+export async function getTripsById(id) {
+  try {
+    const res = await fetch(`${process.env.HEROKU_URL}/api/v1/trips/${id}`, {
+      method: 'GET',
+      credentials: 'include',
+      mode: 'cors',
+    });
+    return res.json();
+  } catch (error) {}
+}
