@@ -3,26 +3,39 @@ import './flightStatus.css';
 
 export default function FlightStatusDetails() {
   return (
-    <div>
-      <div>
-        <h1>username from context</h1>
-        <div class="flightInputs">
-          Turn these into H2s, with an edit button
-          <h1>Flight</h1>
-          {/* --- 1st Person flight info --- */}
-          <input placeholder="Flight Airline" />
-          <input placeholder="Flight Number" />
-          {/* Second person flight info */}
-          <input placeholder="Flight Airline" />
-          <input placeholder="Flight Number" />
-          {/* Second person flight info */}
-          <input placeholder="Flight Airline" />
-          <input placeholder="Flight Number" />
-          {/* Second person flight info */}
-          <input placeholder="Flight Airline" />
-          <input placeholder="Flight Number" />
-        </div>
+    <form class="flightInputs">
+      <div className="first">
+        {/* --- 1st Person flight info --- */}
+        <input placeholder="Name" />
+        <input placeholder="Flight Airline" />
+        <input placeholder="Departure" />
+        <input placeholder="Arrival" />
+        <input placeholder="Flight Number" />
       </div>
-    </div>
+      <div className="second">
+        {/* Second person flight info */}
+        <input placeholder="Name" />
+        <input placeholder="Flight Airline" />
+        <input placeholder="Departure" />
+        <input placeholder="Arrival" />
+        <input placeholder="Flight Number" />
+      </div>
+      <div className="third">
+        {/* Second person flight info */}
+        <input placeholder="Name" />
+        <input placeholder="Flight Airline" />
+        <input placeholder="Departure" />
+        <input placeholder="Arrival" />
+        <input placeholder="Flight Number" />
+      </div>
+      <div className="fourth">
+        {/* Second person flight info */}
+        <input placeholder="Name" />
+        <input placeholder="Flight Airline" />
+        <input placeholder="Departure" />
+        <input placeholder="Arrival" />
+        <input placeholder="Flight Number" />
+      </div>
+    </form>
   );
 }
