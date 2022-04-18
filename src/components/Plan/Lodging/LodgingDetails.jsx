@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getLodgingById, updateLodging } from '../../../services/lodging';
 import './lodging.css';
-import LodgingForm from './lodgingForm';
+import LodgingForm from './LodgingForm';
 
 export default function LodgingDetails() {
   const [nameOfPlace, setNameOfPlace] = useState('');
