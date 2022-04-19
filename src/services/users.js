@@ -4,6 +4,7 @@ export const signOut = async () => {
     credentials: 'include',
     mode: 'cors',
   });
+  window.location.replace('/trips');
 
   return res.ok;
 };
