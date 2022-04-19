@@ -1,6 +1,7 @@
 import React from 'react';
 import TripDetails from '../../components/TripDetails/TripDetails';
 import TripsCard from './TripsCard';
+// import { getAllTrips } from '../../services/params';
 import { getAllTrips } from '../../services/trips';
 
 export default function Trips() {

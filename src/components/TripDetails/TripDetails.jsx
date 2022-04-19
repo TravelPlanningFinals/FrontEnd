@@ -20,6 +20,7 @@ export default function TripDetails() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addTrips(locationText, startDateText, endDateText);
+    window.location.replace('/trips');
     // setUser(userText);
     // setTrips([
     //   ...trips,
@@ -31,7 +32,6 @@ export default function TripDetails() {
     //   },
     // ]);
   };
-
   return (
     <>
       <div className="trip-form">
@@ -68,20 +68,15 @@ export default function TripDetails() {
               setEndDateText(e.target.value);
             }}
           />
-          {/* <label>ehello</label>
-          <input list="guests" />
-          <datalist id="guests">
-            <option>1</option>
-          </datalist> */}
-          {/* <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option> */}
         </form>
-        <button onClick={handleSubmit}>Create Trip</button>
-        {/* <button class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5">
+        {/* <button onClick={handleSubmit}>Create Trip</button> */}
+
+        <button
+          class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
+          onClick={handleSubmit}
+        >
           Plan Your Trip
-        </button> */}
+        </button>
       </div>
     </>
   );
