@@ -29,26 +29,6 @@ export default function App() {
                 <AboutUs />
               </Route>
 
-<<<<<<< HEAD
-              {/* <Route path="/login"> */}
-              <Route path="/landing">
-                {/* <Login /> */}
-                <Landing />
-              </Route>
-
-              <Route path="/register">
-                <Login isSigningUp />
-              </Route>
-
-              <Route path="/trips">
-                <Trips />
-              </Route>
-
-              <PrivateRoute path="/plan">
-                <PlanPage />
-              </PrivateRoute>
-
-=======
               <Route path="/register">
                 <Login isSigningUp />
               </Route>
@@ -61,7 +41,6 @@ export default function App() {
                 <PlanPage />
               </PrivateRoute>
 
->>>>>>> 173f3338b263993ed198509f8f39f9583f0b6584
               {/* <Route path="/plan">
               <PlanPage />
             </Route> */}
