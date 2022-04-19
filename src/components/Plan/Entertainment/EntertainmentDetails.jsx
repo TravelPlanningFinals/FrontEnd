@@ -5,6 +5,7 @@ import { getYelp } from '../../../utils/yelp';
 import './entertainment.css';
 
 export default function EntertainmentDetails() {
+  const [city, setCity] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -12,9 +13,24 @@ export default function EntertainmentDetails() {
       const data = await getTripsById(id);
       const yelp = await getYelp(data.location);
       console.log('yelp', yelp.body.businesses);
+      setCity(yelp.body.businesses);
     };
     fetchData();
   }, []);
 
-  return <h1>HOlder</h1>;
+  console.log('city', city);
+
+  return (
+    <>
+      <div>
+        {city.map((item) => {
+          return (
+            <div key={item.name}>
+              <h2 key="item">{item.name}</h2>;
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
 }
