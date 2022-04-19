@@ -1,42 +1,88 @@
-import React from 'react';
+import { check } from 'prettier';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getLodgingById, updateLodging } from '../../../services/lodging';
 import './lodging.css';
+import LodgingForm from './LodgingForm';
 
 export default function LodgingDetails() {
+  const [nameOfPlace, setNameOfPlace] = useState('');
+  const [contactInfo, setContactInfo] = useState('');
+  const [pricePerNight, setPricePerNight] = useState('');
+  const [checkIn, setCheckIn] = useState('');
+  const [checkOut, setCheckOut] = useState('');
+  const [address1, setAddress1] = useState('');
+  const [address2, setAddress2] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zip, setZip] = useState('');
+
+  const params = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getLodgingById(params.id);
+      setNameOfPlace(data.nameOfPlace);
+      setContactInfo(data.contactInfo);
+      setPricePerNight(data.pricePerNight);
+      setCheckIn(data.checkIn);
+      setCheckOut(data.checkOut);
+      setAddress1(data.address1);
+      setAddress2(data.address2);
+      setCity(data.city);
+      setState(data.state);
+      setZip(data.ciy);
+    };
+    fetchData();
+  }, [params.id]);
+
+  const hanldeSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const redir = await updateLodging(
+        params.id,
+        nameOfPlace,
+        contactInfo,
+        pricePerNight,
+        checkIn,
+        checkOut,
+        address1,
+        address2,
+        city,
+        state,
+        zip
+      );
+      alert('You updated the info!');
+    } catch (error) {
+      alert('Info Failed to update');
+    }
+  };
+
   return (
     <div>
-      <div>
-        <h1>Name of the hotel/Airbnb:</h1>
-        {/* --- Back end of name_of_place in loding table --- */}
-        <input placeholder="name of hotel/Airbnb" />
-      </div>
-      <div>
-        {/* --- need to change location in loding table to below --- */}
-        <h1>Address:</h1>
-        <input placeholder="address 1" />
-        <input placeholder="address 2" />
-        <input placeholder="city" />
-        <input placeholder="state" />
-        <input placeholder="zip" />
-      </div>
-      <div>
-        <h1>Phone:</h1>
-        {/* --- to contact_info in backend --- */}
-        <input placeholder="Phone Number" />
-      </div>
-      <div>
-        {/* --- to price_per_night in back end --- */}
-        <h1>Price per night</h1>
-        $<input placeholder="Price per night" type="number" />
-      </div>
-      <div>
-        {/* --- to check_in and check_out in loding --- */}
-        {/* --- Change to date inputs --- */}
-        <h1>Check in date</h1>
-        <input placeholder="Check in Date" />
-        <h1>Check out date</h1>
-        <input placeholder="Check Out Date" />
-      </div>
-      <button>Submit Info</button>
+      <LodgingForm
+        nameOfPlace={nameOfPlace}
+        setNameOfPlace={setNameOfPlace}
+        contactInfo={contactInfo}
+        setContactInfo={setContactInfo}
+        pricePerNight={pricePerNight}
+        setPricePerNight={setPricePerNight}
+        checkIn={checkIn}
+        setCheckIn={setCheckIn}
+        checkOut={checkOut}
+        setCheckOut={setCheckOut}
+        address1={address1}
+        setAddress1={setAddress1}
+        address2={setAddress2}
+        setAddress2={setAddress2}
+        city={city}
+        setCity={setCity}
+        state={state}
+        setState={setState}
+        zip={zip}
+        setZip={setZip}
+        hanldeSubmit={hanldeSubmit}
+      />
     </div>
   );
 }
