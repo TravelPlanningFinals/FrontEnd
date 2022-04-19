@@ -32,7 +32,6 @@ export default function TripDetails() {
     //   },
     // ]);
   };
-
   return (
     <>
       <div className="trip-form">
@@ -69,15 +68,6 @@ export default function TripDetails() {
               setEndDateText(e.target.value);
             }}
           />
-          {/* <label>ehello</label>
-          <input list="guests" />
-          <datalist id="guests">
-            <option>1</option>
-          </datalist> */}
-          {/* <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option> */}
         </form>
         {/* <button onClick={handleSubmit}>Create Trip</button> */}
 
