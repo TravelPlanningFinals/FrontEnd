@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getTripsById } from '../../../services/trips';
 import { getYelp } from '../../../utils/yelp';
 import './entertainment.css';
 
 export default function EntertainmentDetails() {
-  const [location, setLocation] = useState('');
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const tripId = await getTripsById();
-      console.log('tripId', tripId);
-      const yelp = await getYelp(location);
-      console.log('yelp', yelp);
+      const data = await getTripsById(id);
+      const yelp = await getYelp(data.location);
+      console.log('yelp', yelp.body.businesses);
     };
     fetchData();
   }, []);
 
-  return <h1> Test</h1>;
+  return <h1>HOlder</h1>;
 }
