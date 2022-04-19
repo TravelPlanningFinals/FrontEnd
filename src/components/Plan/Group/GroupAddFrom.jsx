@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function GroupForm({
+export default function GroupAddForm({
   name1,
   setName1,
   name2,
