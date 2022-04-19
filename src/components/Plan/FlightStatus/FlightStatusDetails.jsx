@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { useTrips } from '../../../hooks/useTrips';
 import { addFlights } from '../../../services/flights';
 import './flightStatus.css';
 
 export default function FlightStatusDetails() {
+  const { trips, loading } = useTrips();
+  console.log('trips', trips);
+  console.log('trips.flights', trips.flights);
+
   const [name, setName] = useState('');
   const [airline1, setAirline1] = useState('');
   const [departure1, setDeparture1] = useState('');
@@ -29,162 +34,175 @@ export default function FlightStatusDetails() {
     await addFlights(airline3, departure3, arrival3, flightNumber3);
     await addFlights(airline4, departure4, arrival4, flightNumber4);
   };
-
+  if (loading) return <p>loading</p>;
   return (
-    <form class="flightInputs">
-      <div className="first">
-        {/* --- 1st Person flight info --- */}
-        {/* <input
+    <>
+      <h1>this is showing on flights</h1>
+      {trips.flights.map((flight) => {
+        return (
+          <div className="flight-list" key={flight.id}>
+            <p className="airline">airline: {flight.airline}</p>
+            <p className="airline">departure: {flight.departure}</p>
+            <p className="airline">arrival: {flight.arrival}</p>
+            <p className="airline">flight Number: {flight.flight_number}</p>
+          </div>
+        );
+      })}
+      <form class="flightInputs">
+        <div className="first">
+          {/* --- 1st Person flight info --- */}
+          {/* <input
           placeholder="Name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
         /> */}
-        <input
-          placeholder="Flight Airline"
-          value={airline1}
-          onChange={(e) => {
-            setAirline1(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Departure"
-          value={departure1}
-          onChange={(e) => {
-            setDeparture1(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Arrival"
-          value={arrival1}
-          onChange={(e) => {
-            setArrival1(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Flight Number"
-          value={flightNumber1}
-          onChange={(e) => {
-            setFlightNumber1(e.target.value);
-          }}
-        />
-      </div>
-      <div className="second">
-        {/* --- 1st Person flight info --- */}
-        {/* <input
+          <input
+            placeholder="Flight Airline"
+            value={airline1}
+            onChange={(e) => {
+              setAirline1(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Departure"
+            value={departure1}
+            onChange={(e) => {
+              setDeparture1(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Arrival"
+            value={arrival1}
+            onChange={(e) => {
+              setArrival1(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Flight Number"
+            value={flightNumber1}
+            onChange={(e) => {
+              setFlightNumber1(e.target.value);
+            }}
+          />
+        </div>
+        <div className="second">
+          {/* --- 1st Person flight info --- */}
+          {/* <input
           placeholder="Name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
         /> */}
-        <input
-          placeholder="Flight Airline"
-          value={airline2}
-          onChange={(e) => {
-            setAirline2(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Departure"
-          value={departure2}
-          onChange={(e) => {
-            setDeparture2(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Arrival"
-          value={arrival2}
-          onChange={(e) => {
-            setArrival2(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Flight Number"
-          value={flightNumber2}
-          onChange={(e) => {
-            setFlightNumber2(e.target.value);
-          }}
-        />
-      </div>
-      <div className="second">
-        {/* --- 1st Person flight info --- */}
-        {/* <input
+          <input
+            placeholder="Flight Airline"
+            value={airline2}
+            onChange={(e) => {
+              setAirline2(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Departure"
+            value={departure2}
+            onChange={(e) => {
+              setDeparture2(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Arrival"
+            value={arrival2}
+            onChange={(e) => {
+              setArrival2(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Flight Number"
+            value={flightNumber2}
+            onChange={(e) => {
+              setFlightNumber2(e.target.value);
+            }}
+          />
+        </div>
+        <div className="second">
+          {/* --- 1st Person flight info --- */}
+          {/* <input
           placeholder="Name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
         /> */}
-        <input
-          placeholder="Flight Airline"
-          value={airline3}
-          onChange={(e) => {
-            setAirline3(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Departure"
-          value={departure3}
-          onChange={(e) => {
-            setDeparture3(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Arrival"
-          value={arrival3}
-          onChange={(e) => {
-            setArrival3(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Flight Number"
-          value={flightNumber3}
-          onChange={(e) => {
-            setFlightNumber3(e.target.value);
-          }}
-        />
-      </div>
-      <div className="second">
-        {/* --- 1st Person flight info --- */}
-        {/* <input
+          <input
+            placeholder="Flight Airline"
+            value={airline3}
+            onChange={(e) => {
+              setAirline3(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Departure"
+            value={departure3}
+            onChange={(e) => {
+              setDeparture3(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Arrival"
+            value={arrival3}
+            onChange={(e) => {
+              setArrival3(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Flight Number"
+            value={flightNumber3}
+            onChange={(e) => {
+              setFlightNumber3(e.target.value);
+            }}
+          />
+        </div>
+        <div className="second">
+          {/* --- 1st Person flight info --- */}
+          {/* <input
           placeholder="Name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
         /> */}
-        <input
-          placeholder="Flight Airline"
-          value={airline4}
-          onChange={(e) => {
-            setAirline4(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Departure"
-          value={departure4}
-          onChange={(e) => {
-            setDeparture4(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Arrival"
-          value={arrival4}
-          onChange={(e) => {
-            setArrival4(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Flight Number"
-          value={flightNumber4}
-          onChange={(e) => {
-            setFlightNumber4(e.target.value);
-          }}
-        />
-      </div>
-      <button onClick={handleSubmit}>Add new flight information</button>
-    </form>
+          <input
+            placeholder="Flight Airline"
+            value={airline4}
+            onChange={(e) => {
+              setAirline4(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Departure"
+            value={departure4}
+            onChange={(e) => {
+              setDeparture4(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Arrival"
+            value={arrival4}
+            onChange={(e) => {
+              setArrival4(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Flight Number"
+            value={flightNumber4}
+            onChange={(e) => {
+              setFlightNumber4(e.target.value);
+            }}
+          />
+        </div>
+        <button onClick={handleSubmit}>Add new flight information</button>
+      </form>
+    </>
   );
 }
