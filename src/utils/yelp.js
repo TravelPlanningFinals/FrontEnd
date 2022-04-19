@@ -1,7 +1,7 @@
 export async function getYelp(location) {
   try {
     const res = await fetch(
-      `${process.env.HEROKU_URL}/api/v1/yelp?location=Reno`,
+      `${process.env.HEROKU_URL}/api/v1/yelp?location=${location}`,
       {
         method: 'GET',
         credentials: 'include',

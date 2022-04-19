@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { getTripsById } from '../../../services/trips';
 import { getYelp } from '../../../utils/yelp';
@@ -18,15 +19,23 @@ export default function EntertainmentDetails() {
     fetchData();
   }, []);
 
-  console.log('city', city);
-
   return (
     <>
       <div>
         {city.map((item) => {
           return (
             <div key={item.name}>
-              <h2 key="item">{item.name}</h2>;
+              {/* <a href={item.url}> */}
+              <h2 key="item">{item.name}</h2>
+              <img src={item.image_url} />
+              <h2>{item.display_phone}</h2>
+              <h2>
+                {item.location.address1} {item.location.city}{' '}
+                {item.location.zip_code}
+              </h2>
+              <h2>Price:{item.price}</h2>
+              <h2>Rating:{item.rating}</h2>
+              {/* </a> */}
             </div>
           );
         })}
