@@ -1,5 +1,5 @@
 import React from 'react';
-// test
+
 export default function GroupForm({
   name1,
   setName1,
