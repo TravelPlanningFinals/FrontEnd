@@ -16,6 +16,7 @@ export default function TripDetails() {
   // const history = useHistory();
   // handle submit w/ locations and dates
   // map thru on trips page or push to another page to list trips
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

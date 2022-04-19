@@ -22,7 +22,9 @@ export default function Chat() {
   return (
     <div>
       <img onClick={minimize} src={X} class={XStyle}></img>
-      <div onClick={handleClick} className={style}>
+      {/* --- replace with below if going 4x4 tiles --- */}
+      <div onClick={handleClick} className="hidden">
+        {/* <div onClick={handleClick} className={style}> */}
         <h1 className="padding">Chat Page</h1>
         <div className={hidden}>
           <ChatDetails />

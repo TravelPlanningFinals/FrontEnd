@@ -9,7 +9,6 @@ import { TripProvider } from './context/TripProvider';
 import { UserProvider } from './context/UserProvider';
 import AboutUs from './views/About Us/AboutUs';
 import Login from './views/Auth/Login';
-import Landing from './views/LandingPage/Landing';
 import PlanPage from './views/Plan/PlanPage';
 import Trips from './views/Trips/Trips';
 
@@ -30,6 +29,7 @@ export default function App() {
                 <AboutUs />
               </Route>
 
+<<<<<<< HEAD
               {/* <Route path="/login"> */}
               <Route path="/landing">
                 {/* <Login /> */}
@@ -48,6 +48,20 @@ export default function App() {
                 <PlanPage />
               </PrivateRoute>
 
+=======
+              <Route path="/register">
+                <Login isSigningUp />
+              </Route>
+
+              <Route path="/trips">
+                <Trips />
+              </Route>
+
+              <PrivateRoute path="/plan/:id">
+                <PlanPage />
+              </PrivateRoute>
+
+>>>>>>> 173f3338b263993ed198509f8f39f9583f0b6584
               {/* <Route path="/plan">
               <PlanPage />
             </Route> */}
