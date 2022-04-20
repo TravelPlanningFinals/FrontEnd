@@ -6,7 +6,7 @@ import './flightStatus.css';
 export default function FlightStatusDetails() {
   const { trips, loading } = useTrips();
   console.log('trips', trips);
-  console.log('trips.flights', trips.flights);
+  // console.log('trips.flights', trips.flights);
 
   const [name, setName] = useState('');
   const [airline1, setAirline1] = useState('');
