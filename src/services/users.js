@@ -14,9 +14,8 @@ export const getCurrentUser = async () => {
     const res = await fetch(`${process.env.HEROKU_URL}/api/v1/github/me`, {
       method: 'GET',
       credentials: 'include',
-      mode: 'cors',
+      // mode: 'cors',
     });
-    console.log('res', res);
     return res.json();
   } catch (error) {
     console.log('error', error);

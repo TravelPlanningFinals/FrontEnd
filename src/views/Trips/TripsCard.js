@@ -1,24 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTrips } from '../../context/TripProvider';
 import { getAllTrips } from '../../services/trips';
-// import { getYelp } from '../../utils/yelp';
 import './TripsCard.css';
 
 export default function TripsCard() {
   const { trips, setTrips } = useTrips();
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllTrips();
       setTrips(data);
-      console.log(data);
-      // const yelp = await getYelp();
-      // console.log('GABE', yelp);
-      //   setLoading(false);
+      setLoading(false);
     };
     fetchData();
   }, []);
-  console.log(trips);
+
+  if (loading) return <p>loading...</p>;
   return (
     <>
       <h1 className="tripListTitle">TRIPS</h1>

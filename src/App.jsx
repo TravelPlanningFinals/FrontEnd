@@ -20,30 +20,18 @@ export default function App() {
         <UserProvider>
           <TripProvider>
             <Switch>
-              {/* <Landing /> */}
               <Route exact path="/">
                 <Login />
               </Route>
-
-              <Route exact path="/aboutus">
-                <AboutUs />
-              </Route>
-
-              <Route path="/register">
-                <Login isSigningUp />
-              </Route>
-
+            <Route exact path="/aboutus">
+              <AboutUs />
+            </Route>
               <Route path="/trips">
                 <Trips />
               </Route>
-
               <PrivateRoute path="/plan/:id">
                 <PlanPage />
               </PrivateRoute>
-
-              {/* <Route path="/plan">
-              <PlanPage />
-            </Route> */}
             </Switch>
           </TripProvider>
         </UserProvider>
