@@ -12,7 +12,7 @@ export default function Login() {
         {/* <a href={'https://travelapp70.herokuapp.com/api/v1/github/login'}> */}
         {/* !!!!!this link above auto deploys MAIN branch. We need to activate this one, and disable the one below for presentation !!!!!*/}
 
-        <a href={`${process.env.HEROKU_URL}api/v1/github/login`}>
+        <a href={`${process.env.HEROKU_URL}/api/v1/github/login`}>
           {' '}
           {/* !!!! this is dev link!!!!! */}
           Sign in
