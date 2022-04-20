@@ -1,25 +1,37 @@
 import React from 'react';
 import { useUser } from '../../../context/UserProvider';
+import { useTrips } from '../../../hooks/useTrips';
 import './tripLocation.css';
 
 export default function TripLocationDetails() {
-  // --- Need to use this context below ----
   const { user } = useUser();
+  const { trips, loading } = useTrips();
+  console.log('Look here NOAH', trips.guests);
+
+  if (loading) return <p>...loading</p>;
 
   return (
     <div class="tripCard">
-      <div>Trip Location Page</div>
-      <h1>Your Trip</h1>
       <div>
         <ul>
-          {/* --- user context here for user names "group" --- */}
-          <li>User Context's Group</li>
-          {/* user context example here */}
-          <li>{user?.username}</li>
-          {/* --- use the TripId to pull dates going */}
-          <li> Date of whent they are going</li>
-          {/* --- back end of tripId to show where they are going */}
-          <li>Where they are going</li>
+          <li>Trip Summary for {trips.location}</li>
+          <li>{user?.username} Will be your Tour guide</li>
+          <li>
+            <img src={user?.avatar} />
+          </li>
+          <li>
+            The Trip will begin on {trips.startDate} and end on {trips.endDate}
+          </li>
+          <li>
+            {trips.guests.map((guest) => {
+              return (
+                <div key={guest.id}>
+                  <h2>{guest.name}</h2>
+                  <h2>{guest.phone_number}</h2>
+                </div>
+              );
+            })}
+          </li>
           {/* --- Start Date count down of when to go. */}
           <li>count down until event</li>
         </ul>

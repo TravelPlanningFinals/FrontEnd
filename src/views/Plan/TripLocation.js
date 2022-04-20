@@ -3,14 +3,14 @@ import TripLocationDetails from '../../components/Plan/TripLocation/TripLocation
 import X from '../../assets/images/X.png';
 import { useUser } from '../../context/UserProvider';
 import travel from '../../assets/images/travel.png';
+import { useTrips } from '../../hooks/useTrips';
 
 export default function TripLocation() {
   const [style, setStyle] = useState('tripInfo');
   const [hidden, setHidden] = useState('hidden');
   const [XStyle, setXStyle] = useState('hidden');
   const [image, setImage] = useState('travel');
-  // --- Need to turn context into City context or pull from back end---
-  // const { user } = useUser();
+  const { trips } = useTrips();
 
   function handleClick() {
     setStyle('tripInfoBig');
@@ -32,8 +32,9 @@ export default function TripLocation() {
       <div onClick={handleClick} className={style}>
         {/* pull from back end */}
         {/* --- Context of City name goes here --- */}
-        <h1 className="padding">CITY going to</h1>
+        <h1 className="padding">Your Trip to</h1>
         <img src={travel} class={image}></img>
+        <h1>{trips.location}</h1>
         <div className={hidden}>
           <TripLocationDetails />
         </div>
