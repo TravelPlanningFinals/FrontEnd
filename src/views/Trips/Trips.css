@@ -1,7 +1,0 @@
-.tripcard {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-shadow: 1px 2px 1px darkred;
-  width: 100%;
-}

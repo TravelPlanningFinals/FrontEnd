@@ -16,7 +16,6 @@ export const getCurrentUser = async () => {
       credentials: 'include',
       mode: 'cors',
     });
-    console.log('res', res);
     return res.json();
   } catch (error) {
     console.log('error', error);

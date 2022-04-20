@@ -7,7 +7,7 @@ export default function PrivateRoute({ children, ...routeProps }) {
 
   return (
     <Route {...routeProps}>
-      {!loading && !user ? <Redirect to="/" /> : children}
+      {loading && !user ? <Redirect to="/" /> : children}
     </Route>
   );
 }

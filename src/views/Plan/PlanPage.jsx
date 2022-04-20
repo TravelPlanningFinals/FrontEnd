@@ -11,18 +11,20 @@ import './PlanPage.css';
 
 export default function PlanPage() {
   return (
-    <div>
-      Planning Page
-      <div className="planningBody">
-        <TripLocation />
-        <Dates />
-        <Group />
-        <FlightStatus />
-        <Entertainment />
-        <Lodging />
-        <Budget />
-        <Chat />
+    <>
+      <h1 className="planpage">Planning Page</h1>
+      <div>
+        <div className="planningBody">
+          <TripLocation />
+          <Dates />
+          <Group />
+          <FlightStatus />
+          <Entertainment />
+          <Lodging />
+          <Budget />
+          <Chat />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
