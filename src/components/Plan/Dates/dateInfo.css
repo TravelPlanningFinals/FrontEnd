@@ -48,6 +48,8 @@
   transform: translate3d(413px, 6px, 0px);
   background-color: #e3d1a7;
   transition: 1s;
+  font-size: xx-large;
+  font-weight: 700;
 }
 
 .dateInfo:hover h1 {
