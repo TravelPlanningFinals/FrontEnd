@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTrips } from '../../context/TripProvider';
 import { getAllTrips } from '../../services/trips';
-// import { getYelp } from '../../utils/yelp';
 import './TripsCard.css';
 
 export default function TripsCard() {
@@ -11,14 +10,9 @@ export default function TripsCard() {
     const fetchData = async () => {
       const data = await getAllTrips();
       setTrips(data);
-      console.log(data);
-      // const yelp = await getYelp();
-      // console.log('GABE', yelp);
-      //   setLoading(false);
     };
     fetchData();
   }, []);
-  console.log(trips);
   return (
     <>
       <h1 className="tripListTitle">TRIPS</h1>
