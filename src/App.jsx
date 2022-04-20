@@ -17,36 +17,24 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <main>
-        <TripProvider>
-          <Switch>
-            {/* <Landing /> */}
-            <Route exact path="/">
-              <Login />
-            </Route>
-
+        <UserProvider>
+          <TripProvider>
+            <Switch>
+              <Route exact path="/">
+                <Login />
+              </Route>
             <Route exact path="/aboutus">
               <AboutUs />
             </Route>
-
-            <Route path="/register">
-              <Login isSigningUp />
-            </Route>
-
-            <UserProvider>
               <Route path="/trips">
                 <Trips />
               </Route>
-
               <PrivateRoute path="/plan/:id">
                 <PlanPage />
               </PrivateRoute>
-            </UserProvider>
-
-            {/* <Route path="/plan">
-              <PlanPage />
-            </Route> */}
-          </Switch>
-        </TripProvider>
+            </Switch>
+          </TripProvider>
+        </UserProvider>
       </main>
       <Footer />
     </BrowserRouter>
