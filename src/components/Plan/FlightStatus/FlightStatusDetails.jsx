@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { useTrips } from '../../../hooks/useTrips';
 import { addFlights } from '../../../services/flights';
 import './flightStatus.css';
 
 export default function FlightStatusDetails() {
   const { trips, loading } = useTrips();
-  const { id } = useParams();
-  console.log('id', id);
   const tripsId = trips.id;
-  console.log('tripsId', tripsId);
-  console.log('trips.id', trips.id);
-  console.log('trips.flights', trips.flights);
-
   const [airline, setAirline] = useState('');
   const [departure, setDeparture] = useState('');
   const [arrival, setArrival] = useState('');
