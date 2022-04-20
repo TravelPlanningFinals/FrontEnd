@@ -10,7 +10,6 @@ export default function TripLocationDetails() {
   const count = CountDown(trips.startDate);
   console.log('trips', trips);
 
-
   if (loading) return <p>...loading</p>;
 
   return (
@@ -30,7 +29,6 @@ export default function TripLocationDetails() {
                 <div key={guest.id}>
                   <h2>{guest.name}</h2>
                   <h2>{guest.phone_number}</h2>
-
                 </div>
               );
             })}
