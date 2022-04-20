@@ -23,15 +23,12 @@ export default function App() {
               <Route exact path="/">
                 <Login />
               </Route>
-
-              <Route exact path="/aboutus">
-                <AboutUs />
-              </Route>
-
+            <Route exact path="/aboutus">
+              <AboutUs />
+            </Route>
               <Route path="/trips">
                 <Trips />
               </Route>
-
               <PrivateRoute path="/plan/:id">
                 <PlanPage />
               </PrivateRoute>
