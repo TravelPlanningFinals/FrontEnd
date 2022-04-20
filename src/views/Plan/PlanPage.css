@@ -2,13 +2,18 @@
   display: flex;
   margin: auto;
   /* position: relative; */
-  /* width: 100%; */
-  max-width: 100rem;
+  /* position can be change to have the page able to scroll down, but for now, this fixes the padding on the right side not being even with the left */
+  width: 100%;
+  /* max-width: 100rem; */
   overflow: hidden;
   min-height: 100%;
-  height: 614px;
+  height: 714px;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.planpage {
+  text-decoration: underline;
 }
 
 planningBody h1 {
@@ -47,16 +52,19 @@ planningBody h1 {
 .X {
   max-width: 65px;
   position: absolute;
-  top: 10%;
-  right: 10%;
+  top: 8.5%;
+  right: 3.5%;
   z-index: 20;
   transition: 2s;
   animation-name: fadeIn;
   animation-duration: 2s;
+  border: 2px solid #3c493f;
+  border-radius: 6px;
 }
 
 .X:hover {
   cursor: pointer;
+  background-color: red;
 }
 
 @keyframes fadeIn {

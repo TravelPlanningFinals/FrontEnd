@@ -24,18 +24,22 @@ export default function EntertainmentDetails() {
       <div>
         {city.map((item) => {
           return (
-            <div key={item.name}>
-              <a href={item.url}>
-                <h2 key="item">{item.name}</h2>
-              </a>
-              <img src={item.image_url} />
-              <h2>{item.display_phone}</h2>
-              <h2>
-                {item.location.address1} {item.location.city}{' '}
-                {item.location.zip_code}
-              </h2>
-              <h2>Price:{item.price}</h2>
-              <h2>Rating:{item.rating}</h2>
+            <div className="yelpdiv">
+              <div key={item.name}>
+                <a className="yelplink" href={item.url}>
+                  <h2 key="item">{item.name}</h2>
+                </a>
+                <img src={item.image_url} />
+                <div className="yelpinfo">
+                  <h2>{item.display_phone}</h2>
+                  <h2>
+                    {item.location.address1} {item.location.city}{' '}
+                    {item.location.zip_code}
+                  </h2>
+                  <h2>Price:{item.price}</h2>
+                  <h2>Rating:{item.rating}</h2>
+                </div>
+              </div>
             </div>
           );
         })}

@@ -53,9 +53,10 @@
   justify-content: flex-start;
   position: absolute;
   width: 1634px;
-  height: 614px;
+  height: 700px;
   background-color: #e3d1a7;
   transition: 1s;
+  bottom: 25px;
 }
 
 .entertainmentInfoBig h1 {
@@ -86,3 +87,35 @@
       right: -101rem;
     }
      */
+
+.img {
+  width: 20px;
+}
+
+.yelpdiv {
+  background-color: lightsteelblue;
+  display: inline-flex;
+  inline-size: 65%;
+  /* flex-direction: row; */
+  /* align-items: center; */
+  border: 2px solid #3c493f;
+  border-radius: 6px;
+  width: 25%;
+  /* height: 30%; */
+  margin-left: 1.2vw;
+  margin-right: 1.2vw;
+  margin-top: 1vw;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.yelplink:hover {
+  text-decoration: underline;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.yelpinfo {
+  text-decoration: underline;
+}

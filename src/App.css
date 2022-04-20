@@ -3,6 +3,9 @@ html {
 }
 
 body {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: bold;
+  font-size: large;
   text-align: center;
   padding: 10px;
   @apply bg-slate-800;
