@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DateDetails from '../../components/Plan/Dates/DateDetails';
 import X from '../../assets/images/X.png';
 import calendar from '../../assets/images/calendar.png';
+import { useParams } from 'react-router-dom';
+import { getTripsById } from '../../services/trips';
+import CountDown from '../../utils/countdown';
 
 export default function Dates() {
+  const { id } = useParams();
+  const [startDate, setStartDate] = useState('');
+
   const [style, setStyle] = useState('dateInfo');
   const [hidden, setHidden] = useState('hidden');
   const [XStyle, setXStyle] = useState('hidden');
@@ -22,6 +28,18 @@ export default function Dates() {
     setXStyle('hidden');
     setImage('calendar');
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getTripsById(id);
+      const day = data.startDate;
+      setStartDate(day);
+    };
+    fetchData();
+  }, []);
+
+  const count = CountDown(startDate);
+  console.log('count', count);
 
   return (
     <div>
