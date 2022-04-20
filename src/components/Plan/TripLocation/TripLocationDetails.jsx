@@ -5,8 +5,11 @@ import './tripLocation.css';
 
 export default function TripLocationDetails() {
   const { user } = useUser();
-  const { trips } = useTrips();
-  console.log('user', trips);
+  const { trips, loading } = useTrips();
+  console.log('Look here NOAH', trips.guests);
+
+  if (loading) return <p>...loading</p>;
+
   return (
     <div class="tripCard">
       <div>
@@ -19,16 +22,15 @@ export default function TripLocationDetails() {
           <li>
             The Trip will begin on {trips.startDate} and end on {trips.endDate}
           </li>
-          {/* --- map guests === */}
           <li>
-            {/* {trips.guests.map((guest) => {
+            {trips.guests.map((guest) => {
               return (
-                <div key={guest.name}>
+                <div key={guest.id}>
                   <h2>{guest.name}</h2>
                   <h2>{guest.phone_number}</h2>
                 </div>
               );
-            })} */}
+            })}
           </li>
           {/* --- Start Date count down of when to go. */}
           <li>count down until event</li>
