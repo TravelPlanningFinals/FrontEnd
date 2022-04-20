@@ -8,7 +8,6 @@ export default function TripLocationDetails() {
   const { user } = useUser();
   const { trips, loading } = useTrips();
   const count = CountDown(trips.startDate);
-  console.log('trips', trips);
 
   if (loading) return <p>...loading</p>;
 

@@ -4,6 +4,50 @@ import { BrowserRouter } from 'react-router-dom';
 import App from '../src/App';
 import { UserProvider } from '../src/context/UserProvider';
 import userEvent from '@testing-library/user-event';
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
+import Trips from '../src/views/Trips/Trips';
+import { TripProvider } from '../src/context/TripProvider';
+import mockData from '../src/utils/mockData';
+
+const user = {
+  avatar: 'filler',
+  email: null,
+  exp: 123456219731,
+  iat: 2136791232,
+  id: '1',
+  username: 'test user',
+};
+const tripsData = mockData;
+
+// OAuth attempeted Mock
+// const server = setupServer(
+//   rest.get(`http://localhost:7890/api/v1/users`, (req, res, ctx) => {
+//     const select = req.url.searchParams.get('select');
+//     if (select === '*') {
+//       return res(ctx.json([user]));
+//     }
+//     return res(ctx.status(500));
+//   })
+// );
+
+// trips mock
+const server = setupServer(
+  rest.get(
+    `https://traveltrialapp.herokuapp.com/api/v1/trips`,
+    (req, res, ctx) => {
+      const select = req.url.searchParams.get('select');
+      if (select === '*') {
+        return res(ctx.json([tripsData]));
+      }
+      return res(ctx.status(500));
+    }
+  )
+);
+
+beforeAll(() => server.listen());
+
+afterAll(() => server.close());
 
 test('Renders landing page/login loads', () => {
   const container = render(<App />);
@@ -20,30 +64,39 @@ test('Renders landing page/login loads', () => {
   expect(container).toMatchSnapshot();
 });
 
-test('About us Renders', () => {
+test.skip('trips page', async () => {
+  server.use(
+    rest.get(
+      `https://traveltrialapp.herokuapp.com/api/v1/trips
+    `,
+      (req, res, ctx) => {
+        const select = req.url.searchParams.get('select');
+        if (select === '*') {
+          return res(ctx.json([tripsData]));
+        }
+        return res(ctx.status(500));
+      }
+    )
+  );
+
   const container = render(
     <BrowserRouter>
       <UserProvider>
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>
+        <TripProvider>
+          <MemoryRouter>
+            <Trips />
+          </MemoryRouter>
+        </TripProvider>
       </UserProvider>
     </BrowserRouter>
   );
 
-  const aboutUsLink = screen.getByRole('link', { name: /about us/i });
+  const input = await screen.findByRole('textbox', { name: /location/i });
+  // const input = screen.getByPlaceholderText(/location/i);
+  const planBtn = await screen.findByRole('button', {
+    name: /plan your trip/i,
+  });
 
-  userEvent.click(aboutUsLink);
-
-  const aboutUsHeader = screen.getByText(
-    /meet the creators of travel app\.\.\.\.\.!/i
-  );
-  const img = screen.getByRole('img', { name: /libbi headshot/i });
-  const gitHub = screen.getByRole('img', { name: /libbi headshot/i });
-  const descrip = screen.getByRole('img', { name: /libbi headshot/i });
-
-  expect(aboutUsHeader).toBeInTheDocument();
-  expect(img).toBeInTheDocument();
-  expect(gitHub).toBeInTheDocument();
-  expect(descrip).toBeInTheDocument();
+  expect(input).toBeInTheDocument();
+  expect(planBtn).toBeInTheDocument();
 });
