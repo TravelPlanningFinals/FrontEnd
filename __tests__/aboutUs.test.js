@@ -5,7 +5,7 @@ import App from '../src/App';
 import { UserProvider } from '../src/context/UserProvider';
 import userEvent from '@testing-library/user-event';
 
-test('About us Renders', () => {
+test.skip('About us Renders', () => {
   const container = render(
     <BrowserRouter>
       <UserProvider>
