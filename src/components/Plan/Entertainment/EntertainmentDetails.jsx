@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { getTripsById } from '../../../services/trips';
 import { getYelp } from '../../../utils/yelp';
@@ -13,7 +12,6 @@ export default function EntertainmentDetails() {
     const fetchData = async () => {
       const data = await getTripsById(id);
       const yelp = await getYelp(data.location);
-      console.log('yelp', yelp.body.businesses);
       setCity(yelp.body.businesses);
     };
     fetchData();
