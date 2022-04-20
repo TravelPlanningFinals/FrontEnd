@@ -1,12 +1,12 @@
 import React from 'react';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signOut } from '../../services/users';
 import './Header.css';
 
 export default function Header() {
-  const signOut = async (e) => {
+  const handleSignOut = async (e) => {
     e.preventDefault();
+    await signOut();
     window.location.replace('/');
   };
 
@@ -16,7 +16,7 @@ export default function Header() {
         <Link to="/trips">Back to your trips</Link>
       </div>
       <div className="sign-out">
-        <button onClick={signOut}>Sign Out</button>
+        <button onClick={handleSignOut}>Sign Out</button>
       </div>
     </div>
   );
