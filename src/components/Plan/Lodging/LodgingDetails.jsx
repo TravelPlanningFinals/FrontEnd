@@ -45,8 +45,6 @@ export default function LodgingDetails() {
 
   if (loading) return <p>loading</p>;
 
-  console.log(trips.lodging);
-
   return (
     <>
       <h1>Lodging Details</h1>

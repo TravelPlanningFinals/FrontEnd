@@ -28,7 +28,6 @@ export default function GroupAddForm() {
     <>
       <h1>Your Group!</h1>
       {trips.guests.map((guest) => {
-        console.log(trips);
         return (
           <div className="guestlist" key={guest.guest_id}>
             <p className="name">
