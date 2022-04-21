@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { addGuests } from '../../../services/guests';
 import { useTrips } from '../../../hooks/useTrips';
 
@@ -13,6 +13,7 @@ export default function GroupAddForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addGuests(name, email, phoneNumber, emergencyContact, tripsId);
+    window.location.reload('/');
   };
   if (loading) return <p>loading</p>;
   return (
@@ -32,7 +33,6 @@ export default function GroupAddForm() {
       <form>
         <div class="groupCard">
           <div class="groupInputs">
-            {/* Turn these into H2s, with an edit button */}
             <h1>First Name</h1>
             <input
               placeholder="First Name"

@@ -1,4 +1,6 @@
 .trip-form {
+  background-color: lightsteelblue;
+
   display: flex;
   flex-direction: column;
   align-items: center;

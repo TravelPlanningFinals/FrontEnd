@@ -15,6 +15,7 @@ export default function FlightStatusDetails() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addFlights(airline, departure, arrival, flightNumber, tripsId);
+    window.location.reload('/');
   };
   if (loading) return <p>loading</p>;
   return (
@@ -59,8 +60,13 @@ export default function FlightStatusDetails() {
             setFlightNumber(e.target.value);
           }}
         />
-        <button onClick={handleSubmit}>Add new flight information</button>
       </form>
+      <button
+        class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
+        onClick={handleSubmit}
+      >
+        Add New Flight Information{' '}
+      </button>
     </>
   );
 }

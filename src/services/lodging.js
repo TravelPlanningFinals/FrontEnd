@@ -1,10 +1,3 @@
-// const client = `${process.env.HEROKU_URL}/api/v1/lodging`;
-
-// export async function getLodgingById(id) {
-//   let resp = await client.from('lodging').select().match({ id }).single();
-//   return checkError(resposne);
-// }
-
 export async function addLodging(
   nameOfPlace,
   contactInfo,
@@ -38,11 +31,15 @@ export async function addLodging(
         tripsId,
       }),
     });
+<<<<<<< HEAD
     console.log('lodging res', res);
+=======
+>>>>>>> 575014453726a33d286d3fce7701e8dc12a3bd6c
     return res.json();
   } catch (error) {
     console.log('there was an error', error);
   }
+<<<<<<< HEAD
 }
 
 // export async function updateLodging(
@@ -72,3 +69,6 @@ export async function addLodging(
 //   });
 //   return checkError(response);
 // }
+=======
+}
+>>>>>>> 575014453726a33d286d3fce7701e8dc12a3bd6c
