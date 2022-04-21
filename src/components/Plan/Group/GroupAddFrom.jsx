@@ -1,7 +1,6 @@
 import React, { useState, Component } from 'react';
 import { addGuests } from '../../../services/guests';
 import { useTrips } from '../../../hooks/useTrips';
-import EasyEdit from 'react-easy-edit';
 
 export default function GroupAddForm() {
   const { trips, loading } = useTrips();
@@ -10,13 +9,6 @@ export default function GroupAddForm() {
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [emergencyContact, setEmergencyContact] = useState('');
-
-  const save = (value) => {
-    alert(value);
-  };
-  const cancel = () => {
-    alert('Cancelled');
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
