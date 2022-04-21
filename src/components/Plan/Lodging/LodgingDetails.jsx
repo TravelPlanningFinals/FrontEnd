@@ -50,23 +50,30 @@ export default function LodgingDetails() {
       <h1>Lodging Details</h1>
       {trips.lodging.map((lodge) => {
         return (
-          <div key={lodge.id}>
-            <p>{lodge.name_of_place}</p>
-            <p>{lodge.contactInfo}</p>
-            <p>{lodge.address1}</p>
-            <p>{lodge.address2}</p>
-            <p>{lodge.city}</p>
-            <p>{lodge.state}</p>
-            <p>{lodge.zip}</p>
-            <p>Checkin Date:{lodge.checkIn}</p>
-            <p>Checkin Date:{lodge.checkOut}</p>
-            <p>Price:{lodge.pricePerNight}/Night</p>
-            <button onClick={() => handleClick(lodge.lodging_id)}>
+          <div className="lodginglist" key={lodge.id}>
+            <p className="details">Place: {lodge.name_of_place}</p>
+            <p className="details">Contact Info: {lodge.contact_info}</p>
+            <p>
+              Address:
+              <p className="details">{lodge.address_1}</p>
+              <p className="details">{lodge.address_2}</p>
+            </p>
+            <p className="details">City: {lodge.city}</p>
+            <p className="details">State: {lodge.state}</p>
+            <p className="details">Zip: {lodge.zip}</p>
+            <p className="details">Checkin Date: {lodge.check_in}</p>
+            <p className="details">Checkout Date: {lodge.check_out}</p>
+            <p className="details"> Price: {lodge.price_per_night}/Night</p>
+            <button
+              className="button"
+              onClick={() => handleClick(lodge.lodging_id)}
+            >
               Delete
             </button>
           </div>
         );
       })}
+
       <form>
         <input
           placeholder="Hotel Name"
@@ -141,7 +148,9 @@ export default function LodgingDetails() {
           }}
         />
       </form>
-      <button onClick={hanldeSubmit}>Add Hotel Information</button>
+      <button className="add-button" onClick={hanldeSubmit}>
+        Add Hotel Information
+      </button>
     </>
   );
 }

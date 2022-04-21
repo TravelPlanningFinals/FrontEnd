@@ -31,12 +31,6 @@ export default function TripsCard() {
                 <p className="tripStartDate">Start Date: {trips.startDate}</p>
                 <p className="tripEndDate">End Date: {trips.endDate}</p>
               </div>
-              <button
-                class="bg-transparent hover:bg-pink-100 text-red-500 font-semibold hover:text-white py-1 px-2 border border-red-300 hover:border-transparent rounded m-3"
-                // onClick={''}
-              >
-                Edit
-              </button>
             </div>
           );
         })}
