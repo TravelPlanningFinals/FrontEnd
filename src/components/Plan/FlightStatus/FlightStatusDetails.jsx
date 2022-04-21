@@ -27,14 +27,12 @@ export default function FlightStatusDetails() {
   return (
     <>
       {trips.flights.map((flight) => {
-        console.log('flight.flight_id', flight.flight_id);
         return (
-          <>
-            <button>Edit</button>
-            <button onClick={() => deleteFlight(flight.flight_id)}>
+          <div key={flight.flight_id}>
+            <button onClick={() => handleClick(flight.flight_id)}>
               Delete
             </button>
-            <div className="flightlist" key={flight.flight_id}>
+            <div className="flightlist">
               <p className="flightdetails">
                 Airline: <p className="details">{flight.airline}</p>
               </p>
@@ -48,7 +46,7 @@ export default function FlightStatusDetails() {
                 Flight Number: <p className="details">{flight.flight_number}</p>
               </p>
             </div>
-          </>
+          </div>
         );
       })}
       <form className="flightform">
