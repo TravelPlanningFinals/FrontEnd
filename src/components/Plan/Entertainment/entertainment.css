@@ -8,7 +8,8 @@
   height: 298px;
   z-index: 1;
   transform: translate3d(820px, 310px, 0px);
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 5%;
   transition: 1s;
 }
 
@@ -54,7 +55,8 @@
   position: absolute;
   width: 1634px;
   height: 700px;
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 3%;
   transition: 1s;
   bottom: 25px;
 }
@@ -93,7 +95,7 @@
 }
 
 .yelpdiv {
-  background-color: lightsteelblue;
+  background-color: #7e8d85;
   display: inline-flex;
   inline-size: 65%;
   /* flex-direction: row; */

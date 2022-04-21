@@ -3,7 +3,7 @@
 }
 
 .guestlist {
-  background-color: lightsteelblue;
+  background-color: #7e8d85;
   display: inline-flex;
   flex-direction: column;
   border: 2px solid #3c493f;
@@ -90,7 +90,8 @@
   height: 300px;
   z-index: 1;
   transform: translate3d(1227px, 6px, 0px);
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 5%;
   transition: 1s;
 }
 
@@ -110,7 +111,8 @@
   position: absolute;
   width: 1634px;
   height: 614px;
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 3%;
   transition: 1s;
 }
 .groupBig h1 {
