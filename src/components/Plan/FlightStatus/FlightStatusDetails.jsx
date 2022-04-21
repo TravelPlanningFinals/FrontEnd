@@ -17,20 +17,28 @@ export default function FlightStatusDetails() {
     window.location.reload('/');
   };
 
+  // const handleDelete = async (e) => {
+  //   e.preventDefault();
+  //   await deleteFlight(trips.flights.id);
+  // };
+
   if (loading) return <p>loading</p>;
 
   return (
     <>
       <h1>this is showing on flights</h1>
       {trips.flights.map((flight) => {
+        console.log('flight.flight_id', flight.flight_id);
         return (
-          <div className="flight-list" key={flight.id}>
+          <div className="flight-list" key={flight.flight_id}>
             <p className="airline">airline: {flight.airline}</p>
             <p className="airline">departure: {flight.departure}</p>
             <p className="airline">arrival: {flight.arrival}</p>
             <p className="airline">flight Number: {flight.flight_number}</p>
             <button>Edit</button>
-            <button onClick={() => deleteFlight(flight.id)}>Delete</button>
+            <button onClick={() => deleteFlight(flight.flight_id)}>
+              Delete
+            </button>
           </div>
         );
       })}
