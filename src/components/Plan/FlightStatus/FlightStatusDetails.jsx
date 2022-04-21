@@ -29,7 +29,7 @@ export default function FlightStatusDetails() {
   if (loading) return <p>loading</p>;
 
   return (
-    <>
+  <>
       {trips.flights.map((flight) => {
         return (
           <div key={flight.flight_id}>
