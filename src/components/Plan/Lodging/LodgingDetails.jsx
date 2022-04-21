@@ -124,32 +124,3 @@ export default function LodgingDetails() {
     </>
   );
 }
-
-//   return (
-//     <div>
-//       <LodgingForm
-//         nameOfPlace={nameOfPlace}
-//         setNameOfPlace={setNameOfPlace}
-//         contactInfo={contactInfo}
-//         setContactInfo={setContactInfo}
-//         pricePerNight={pricePerNight}
-//         setPricePerNight={setPricePerNight}
-//         checkIn={checkIn}
-//         setCheckIn={setCheckIn}
-//         checkOut={checkOut}
-//         setCheckOut={setCheckOut}
-//         address1={address1}
-//         setAddress1={setAddress1}
-//         address2={setAddress2}
-//         setAddress2={setAddress2}
-//         city={city}
-//         setCity={setCity}
-//         state={state}
-//         setState={setState}
-//         zip={zip}
-//         setZip={setZip}
-//         hanldeSubmit={hanldeSubmit}
-//       />
-//     </div>
-//   );
-// }
