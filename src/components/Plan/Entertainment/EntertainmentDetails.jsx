@@ -22,8 +22,8 @@ export default function EntertainmentDetails() {
       <div>
         {city.map((item) => {
           return (
-            <div className="yelpdiv">
-              <div key={item.name}>
+            <div className="yelpdiv" key={item.name}>
+              <div>
                 <a className="yelplink" href={item.url} target="_blank">
                   <h2 key="item">{item.name}</h2>
 

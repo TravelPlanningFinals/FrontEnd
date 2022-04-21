@@ -28,7 +28,6 @@ export default function GroupAddForm() {
     <>
       <h1>Your Group!</h1>
       {trips.guests.map((guest) => {
-        console.log(trips);
         return (
           <div className="guestlist" key={guest.guest_id}>
             <p className="name">
@@ -44,7 +43,12 @@ export default function GroupAddForm() {
               Emergency Contact:{' '}
               <p className="details">{guest.emergency_contact}</p>
             </p>
-            <button onClick={() => handleClick(guest.guest_id)}>Delete</button>
+            <button
+              className="delete-button"
+              onClick={() => handleClick(guest.guest_id)}
+            >
+              Delete
+            </button>
           </div>
         );
       })}
