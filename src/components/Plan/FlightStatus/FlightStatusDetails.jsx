@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useTrips } from '../../../hooks/useTrips';
-import { addFlights } from '../../../services/flights';
+import { addFlights, deleteFlight } from '../../../services/flights';
 import './flightStatus.css';
 
 export default function FlightStatusDetails() {
   const { trips, loading } = useTrips();
-  console.log('trips.lodging', trips.lodging);
   const tripsId = trips.id;
   const [airline, setAirline] = useState('');
   const [departure, setDeparture] = useState('');
@@ -15,8 +14,11 @@ export default function FlightStatusDetails() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addFlights(airline, departure, arrival, flightNumber, tripsId);
+    window.location.reload('/');
   };
+
   if (loading) return <p>loading</p>;
+
   return (
     <>
       <h1>this is showing on flights</h1>
@@ -27,6 +29,8 @@ export default function FlightStatusDetails() {
             <p className="airline">departure: {flight.departure}</p>
             <p className="airline">arrival: {flight.arrival}</p>
             <p className="airline">flight Number: {flight.flight_number}</p>
+            <button>Edit</button>
+            <button onClick={() => deleteFlight(flight.id)}>Delete</button>
           </div>
         );
       })}
@@ -59,8 +63,13 @@ export default function FlightStatusDetails() {
             setFlightNumber(e.target.value);
           }}
         />
-        <button onClick={handleSubmit}>Add new flight information</button>
       </form>
+      <button
+        class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
+        onClick={handleSubmit}
+      >
+        Add New Flight Information{' '}
+      </button>
     </>
   );
 }

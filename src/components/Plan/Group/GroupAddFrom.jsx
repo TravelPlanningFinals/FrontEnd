@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { addGuests } from '../../../services/guests';
 import { useTrips } from '../../../hooks/useTrips';
 
@@ -13,6 +13,7 @@ export default function GroupAddForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addGuests(name, email, phoneNumber, emergencyContact, tripsId);
+    window.location.reload('/');
   };
   if (loading) return <p>loading</p>;
   return (
