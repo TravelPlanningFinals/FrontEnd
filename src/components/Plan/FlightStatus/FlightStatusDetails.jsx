@@ -32,8 +32,8 @@ export default function FlightStatusDetails() {
   if (loading) return <p>loading</p>;
 
   return (
-    <div className="flight-page">
-      <div className="flights">
+    <>
+      <div>
         {trips.flights.map((flight) => {
           return (
             <div className="flightlist" key={flight.flight_id}>
@@ -95,6 +95,6 @@ export default function FlightStatusDetails() {
           Add New Flight Information
         </button>
       </form>
-    </div>
+    </>
   );
 }
