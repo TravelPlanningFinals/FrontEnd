@@ -8,7 +8,7 @@ export default function TripDetails() {
   const [locationText, setLocationText] = useState('');
   const [startDateText, setStartDateText] = useState('');
   const [endDateText, setEndDateText] = useState('');
-  const { user, loading } = useUser();
+  const { loading } = useUser();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

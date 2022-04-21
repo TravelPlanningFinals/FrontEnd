@@ -11,10 +11,9 @@ export async function addTrips(location, startDate, endDate) {
         endDate,
       }),
     });
-    console.log('res', res);
     return res.json();
   } catch (error) {
-    console.log('there was an error', error);
+    console.log(error);
   }
 }
 export async function getAllTrips() {
@@ -26,7 +25,7 @@ export async function getAllTrips() {
     });
     return res.json();
   } catch (error) {
-    console.log('error', error);
+    console.log(error);
   }
 }
 

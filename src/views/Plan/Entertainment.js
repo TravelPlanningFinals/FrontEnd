@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import EntertainmentDetails from '../../components/Plan/Entertainment/EntertainmentDetails';
 import X from '../../assets/images/X.png';
 import entertainment from '../../assets/images/entertainment.png';
-// import './Entertainment.css';
 
 export default function Entertainment() {
   const [style, setStyle] = useState('entertainmentInfo');

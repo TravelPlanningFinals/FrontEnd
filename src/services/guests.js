@@ -19,10 +19,9 @@ export async function addGuests(
         tripsId,
       }),
     });
-    console.log('res', res);
     return res.json();
   } catch (error) {
-    console.log('there was an error', error);
+    console.log(error);
   }
 }
 
