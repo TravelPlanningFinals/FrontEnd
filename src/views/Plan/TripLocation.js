@@ -29,7 +29,7 @@ export default function TripLocation() {
     <div>
       <img onClick={minimize} src={X} class={XStyle}></img>
       <div onClick={handleClick} className={style}>
-        <h1 className="padding">Your Trip to {trips.location}</h1>
+        <h1 className="padding">Begin Your Trip to {trips.location}</h1>
         <img src={travel} class={image}></img>
         <div className={hidden}>
           <TripLocationDetails />

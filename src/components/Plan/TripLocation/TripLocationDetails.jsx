@@ -18,7 +18,7 @@ export default function TripLocationDetails() {
         <li>{user?.username} Will be your Tour guide</li>
         <img src={user?.avatar} />
         <li>
-          The Trip will begin on {trips.startDate} and end on {trips.endDate}
+          The Trip will begin on: {trips.startDate} and end on {trips.endDate}
         </li>
         <li>Your travel group is:</li>
       </div>
