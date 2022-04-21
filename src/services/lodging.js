@@ -36,3 +36,18 @@ export async function addLodging(
     console.log('there was an error', error);
   }
 }
+
+export async function deleteLodging(id) {
+  try {
+    const resp = await fetch(`${process.env.HEROKU_URL}/api/v1/lodging/${id}`, {
+      method: 'DELETE',
+      credentials: 'include',
+      headers: { 'Content-type': 'application/json' },
+      mode: 'cors',
+    });
+    const json = await resp.json();
+    return json;
+  } catch (error) {
+    console.log(error);
+  }
+}
