@@ -5,7 +5,7 @@ import App from '../src/App';
 import { UserProvider } from '../src/context/UserProvider';
 import userEvent from '@testing-library/user-event';
 
-test.skip('About us Renders', () => {
+test('About us Renders', () => {
   const container = render(
     <BrowserRouter>
       <UserProvider>
@@ -20,9 +20,7 @@ test.skip('About us Renders', () => {
 
   userEvent.click(aboutUsLink);
 
-  const aboutUsHeader = screen.getByText(
-    /meet the creators of travel app\.\.\.\.\.!/i
-  );
+  const aboutUsHeader = screen.getByText(/meet the creators of let's go!/i);
   const img = screen.getByRole('img', { name: /libbi headshot/i });
   const gitHub = screen.getByRole('img', { name: /libbi headshot/i });
   const descrip = screen.getByRole('img', { name: /libbi headshot/i });
