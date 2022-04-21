@@ -71,34 +71,31 @@ test.skip('Renders landing page/login loads', () => {
 });
 
 test.skip('trips page', async () => {
-  server.use(
-    rest.get(
-      `https://traveltrialapp.herokuapp.com/api/v1/trips
-    `,
-      (req, res, ctx) => {
-        const select = req.url.searchParams.get('select');
-        if (select === '*') {
-          return res(ctx.json([tripsData]));
-        }
-        return res(ctx.status(500));
-      }
-    )
-  );
+  // server.use(
+  //   rest.get(
+  //     `https://traveltrialapp.herokuapp.com/api/v1/trips
+  //   `,
+  //     (req, res, ctx) => {
+  //       const select = req.url.searchParams.get('select');
+  //       if (select === '*') {
+  //         return res(ctx.json([tripsData]));
+  //       }
+  //       return res(ctx.status(500));
+  //     }
+  //   )
+  // );
 
   const container = render(
     <BrowserRouter>
       <UserProvider>
         <TripProvider>
-          <MemoryRouter>
-            <Trips />
-          </MemoryRouter>
+          <Trips />
         </TripProvider>
       </UserProvider>
     </BrowserRouter>
   );
 
   const input = await screen.findByRole('textbox', { name: /location/i });
-  // const input = screen.getByPlaceholderText(/location/i);
   const planBtn = await screen.findByRole('button', {
     name: /plan your trip/i,
   });
