@@ -6,14 +6,13 @@ import './tripLocation.css';
 export default function TripLocationDetails({ mapData, loading }) {
   const { user } = useUser();
   const count = CountDown(mapData.startDate);
-  console.log('mapData', mapData.guests);
 
   if (loading) return <p>loading...</p>;
 
   return (
     <>
       <div className="tripSummary">
-        <li>is in {count} days</li>
+        <li>This trip is in {count} days</li>
         <li>{user?.username} Will be your Tour guide</li>
         <img src={user?.avatar} />
         <li>
@@ -22,12 +21,12 @@ export default function TripLocationDetails({ mapData, loading }) {
         </li>
         <li>Your travel group is:</li>
       </div>
-      <div>
+      <div className="group-members">
         {mapData.guests.map((guest) => {
           return (
-            <div classname="Person" key={guest.guest_id}>
+            <div className="person" key={guest.guest_id}>
               <p>{guest.name}</p>
-              <p>{guest.phone_number}</p>
+              <p>Phone #: {guest.phone_number}</p>
             </div>
           );
         })}
