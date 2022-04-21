@@ -26,23 +26,31 @@ export default function FlightStatusDetails() {
 
   return (
     <>
-      <h1>this is showing on flights</h1>
       {trips.flights.map((flight) => {
         console.log('flight.flight_id', flight.flight_id);
         return (
-          <div className="flight-list" key={flight.flight_id}>
-            <p className="airline">airline: {flight.airline}</p>
-            <p className="airline">departure: {flight.departure}</p>
-            <p className="airline">arrival: {flight.arrival}</p>
-            <p className="airline">flight Number: {flight.flight_number}</p>
             <button>Edit</button>
             <button onClick={() => deleteFlight(flight.flight_id)}>
               Delete
             </button>
+          <div className="flightlist" key={flight.flight_id}>
+            <p className="flightdetails">
+              Airline: <p className="details">{flight.airline}</p>
+            </p>
+            <p className="flightdetails">
+              Departure: <p className="details">{flight.departure}</p>
+            </p>
+            <p className="flightdetails">
+              Arrival: <p className="details">{flight.arrival}</p>
+            </p>
+            <p className="flightdetails">
+              Flight Number: <p className="details">{flight.flight_number}</p>
+            </p>
+
           </div>
         );
       })}
-      <form className="flight-form">
+      <form className="flightform">
         <input
           placeholder="Airline"
           value={airline}
@@ -73,7 +81,7 @@ export default function FlightStatusDetails() {
         />
       </form>
       <button
-        class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
+        class="bg-transparent hover:bg-blue-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
         onClick={handleSubmit}
       >
         Add New Flight Information{' '}

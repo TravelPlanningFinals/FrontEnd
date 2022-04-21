@@ -2,10 +2,40 @@
   opacity: 1;
 }
 
+.guestlist {
+  background-color: lightsteelblue;
+  display: inline-flex;
+  flex-direction: column;
+  border: 2px solid #3c493f;
+  border-radius: 6px;
+  width: 30%;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.details {
+  text-decoration: underline;
+}
 .groupDetail {
   display: grid;
   padding-left: 4rem;
   padding-right: 4rem;
+}
+
+.groupform {
+  display: inline-flex;
+  flex-direction: row;
+  /* width: 30%; */
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.groupform1 {
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
 }
 
 .groupBody {
@@ -94,17 +124,13 @@
   animation-name: fadeIn;
   animation-duration: 2s;
 }
-
+/* 
 .groupInputs {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .emailInputs {
   display: flex;
   flex-direction: column;
-}
-
-.groupCard {
-  display: flex;
 }
