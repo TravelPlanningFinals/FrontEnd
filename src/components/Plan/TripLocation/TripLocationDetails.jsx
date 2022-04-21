@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useUser } from '../../../context/UserProvider';
 import { useTrips } from '../../../hooks/useTrips';
+import { getTripsById } from '../../../services/trips';
 import CountDown from '../../../utils/countdown';
 import './tripLocation.css';
 
-export default function TripLocationDetails() {
+export default function TripLocationDetails({ mapData, loading }) {
   const { user } = useUser();
-  const { trips, loading } = useTrips();
-  const count = CountDown(trips.startDate);
+  const count = CountDown(mapData.startDate);
+  console.log('mapData', mapData.guests);
 
-  if (loading) return <p>...loading</p>;
+  if (loading) return <p>loading...</p>;
 
   return (
     <>
@@ -18,11 +19,21 @@ export default function TripLocationDetails() {
         <li>{user?.username} Will be your Tour guide</li>
         <img src={user?.avatar} />
         <li>
-          The Trip will begin on: {trips.startDate} and end on {trips.endDate}
+          The Trip will begin on: {mapData.startDate} and end on{' '}
+          {mapData.endDate}
         </li>
         <li>Your travel group is:</li>
       </div>
-      <div className="group-members">
+      <div>
+        {mapData.guests.map((guest) => {
+          return (
+            <div classname="Person" key={guest.guest_id}>
+              <p>{guest.name}</p>
+            </div>
+          );
+        })}
+      </div>
+      {/* <div className="group-members">
         {trips.guests.map((guest) => {
           return (
             <div className="person" key={guest.name}>
@@ -31,7 +42,7 @@ export default function TripLocationDetails() {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </>
   );
 }
