@@ -32,9 +32,6 @@ export async function deleteFlight(id) {
       credentials: 'include',
       headers: { 'Content-type': 'application/json' },
       mode: 'cors',
-      // body: JSON.stringify({
-      //   id,
-      // }),
     });
     const json = await resp.json();
     return json;

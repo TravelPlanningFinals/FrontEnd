@@ -5,6 +5,7 @@ import { getTripsById } from '../../../services/trips';
 import './flightStatus.css';
 
 export default function FlightStatusDetails() {
+
   const { trips, loading, setTrips, setLoading } = useTrips();
   const tripsId = trips.id;
   const [airline, setAirline] = useState('');
