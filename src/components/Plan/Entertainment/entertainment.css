@@ -90,23 +90,20 @@
      */
 
 .img {
-  width: 20px;
+  width: 20vw;
+  margin: auto;
 }
 
 .yelpdiv {
   background-color: #7e8d85;
   display: inline-flex;
-  inline-size: 65%;
-  /* flex-direction: row; */
-  /* align-items: center; */
   border: 2px solid #3c493f;
   border-radius: 6px;
   width: 25%;
-  /* height: 30%; */
+  height: 30vw;
   margin-left: 1.2vw;
   margin-right: 1.2vw;
   margin-top: 1vw;
-  align-items: center;
   text-align: center;
   padding: 20px;
 }
