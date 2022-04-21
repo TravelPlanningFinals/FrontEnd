@@ -38,14 +38,14 @@ export default function LodgingDetails() {
 
   return (
     <>
-      <h1>Lodging Details</h1>
+      {/* <h1>Lodging Details</h1>
       {trips.lodging.map((lodge) => {
         return (
           <div key={lodge.id}>
             <p>{lodge.name_of_place}</p>
           </div>
         );
-      })}
+      })} */}
       <form>
         <input
           placeholder="Hotel Name"
