@@ -25,7 +25,6 @@ export default function GroupAddForm() {
     setTrips(data);
   };
   if (loading) return <p>loading</p>;
-  // <h1>Your Group!</h1>;
   return (
     <>
       <div>

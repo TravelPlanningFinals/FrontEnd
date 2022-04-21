@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css'; /* Global CSS */
-// import styles from './App.module.css'; /* CSS Modules */
+import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';

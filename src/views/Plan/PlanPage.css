@@ -1,10 +1,7 @@
 .planningBody {
   display: flex;
   margin: auto;
-  /* position: relative; */
-  /* position can be change to have the page able to scroll down, but for now, this fixes the padding on the right side not being even with the left */
   width: 100%;
-  /* max-width: 100rem; */
   overflow: hidden;
   min-height: 100%;
   height: 714px;
@@ -23,10 +20,6 @@
 planningBody h1 {
   opacity: 0.5;
 }
-
-/* button {
-  display: none;
-} */
 
 .hidden {
   display: none;

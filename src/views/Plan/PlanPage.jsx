@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Budget from './Budget';
-import Chat from './Chat';
+import React from 'react';
 import Dates from './Dates';
 import Entertainment from './Entertainment';
 import FlightStatus from './FlightStatus';
@@ -21,8 +19,6 @@ export default function PlanPage() {
           <FlightStatus />
           <Entertainment />
           <Lodging />
-          <Budget />
-          <Chat />
         </div>
       </div>
     </>
