@@ -5,13 +5,15 @@ import { getTripsById } from '../../../services/trips';
 import './flightStatus.css';
 
 export default function FlightStatusDetails() {
-  const { trips, loading, setTrips } = useTrips();
+
+  const { trips, loading, setTrips, setLoading } = useTrips();
   const tripsId = trips.id;
   const [airline, setAirline] = useState('');
   const [departure, setDeparture] = useState('');
   const [arrival, setArrival] = useState('');
   const [flightNumber, setFlightNumber] = useState('');
 
+  console.log('trips', trips);
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addFlights(airline, departure, arrival, flightNumber, tripsId);
@@ -28,7 +30,7 @@ export default function FlightStatusDetails() {
   if (loading) return <p>loading</p>;
 
   return (
-    <>
+  <>
       {trips.flights.map((flight) => {
         return (
           <div key={flight.flight_id}>
