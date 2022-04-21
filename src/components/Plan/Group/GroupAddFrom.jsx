@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { addGuests } from '../../../services/guests';
 import { useTrips } from '../../../hooks/useTrips';
 
@@ -13,6 +13,7 @@ export default function GroupAddForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addGuests(name, email, phoneNumber, emergencyContact, tripsId);
+    window.location.reload('/');
   };
   if (loading) return <p>loading</p>;
   return (
@@ -21,68 +22,77 @@ export default function GroupAddForm() {
       {trips.guests.map((guest) => {
         console.log(trips);
         return (
-          <div className="guest-list" key={guest.id}>
-            <p className="name">Name: {guest.name}</p>
-            <p className="name">Email: {guest.email}</p>
-            <p className="name">Phone Number: {guest.phone_number}</p>
-            <p className="name">Emergency Contact: {guest.emergency_contact}</p>
+          <div className="guestlist" key={guest.id}>
+            <p className="name">
+              Name: <p className="details">{guest.name}</p>
+            </p>
+            <p className="name">
+              Email: <p className="details">{guest.email}</p>
+            </p>
+            <p className="name">
+              Phone Number: <p className="details">{guest.phone_number}</p>
+            </p>
+            <p className="name">
+              Emergency Contact:{' '}
+              <p className="details">{guest.emergency_contact}</p>
+            </p>
           </div>
         );
       })}
-      <form>
-        <div class="groupCard">
-          <div class="groupInputs">
-            <h1>First Name</h1>
-            <input
-              placeholder="First Name"
-              type="text"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />
-          </div>
-          <div className="email">
-            <h1>Email</h1>
-            <input
-              placeholder="Email"
-              type="text"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-          </div>
-          <div className="phone">
-            <h1>Phone Number</h1>
-            <input
-              placeholder="Phone Number"
-              type="text"
-              value={phoneNumber}
-              onChange={(e) => {
-                setPhoneNumber(e.target.value);
-              }}
-            />
-          </div>
-          <div className="emergency">
-            <h1>Emgergency Contact</h1>
-            <input
-              placeholder="emergency contact"
-              type="text"
-              value={emergencyContact}
-              onChange={(e) => {
-                setEmergencyContact(e.target.value);
-              }}
-            />
-          </div>
+      <form className="groupform">
+        <div class="groupform1">
+          <h1>First Name</h1>
+          <input
+            placeholder="First Name"
+            type="text"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
         </div>
+        <div className="groupform1">
+          <h1>Email</h1>
+          <input
+            placeholder="Email"
+            type="text"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </div>
+        <div className="groupform1">
+          <h1>Phone Number</h1>
+          <input
+            placeholder="Phone Number"
+            type="text"
+            value={phoneNumber}
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+            }}
+          />
+        </div>
+        <div className="groupform1">
+          <h1>Emgergency Contact</h1>
+          <input
+            placeholder="emergency contact"
+            type="text"
+            value={emergencyContact}
+            onChange={(e) => {
+              setEmergencyContact(e.target.value);
+            }}
+          />
+        </div>
+      </form>
+      <div className="button">
         <button
-          class="bg-transparent hover:bg-pink-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
+          class="bg-transparent hover:bg-blue-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
           onClick={handleSubmit}
         >
           Add
         </button>
-      </form>
+      </div>
     </>
   );
 }

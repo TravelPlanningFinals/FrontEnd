@@ -33,8 +33,11 @@ export default function TripLocation() {
         {/* pull from back end */}
         {/* --- Context of City name goes here --- */}
         <h1 className="padding">Your Trip to</h1>
+        <h1>
+          {trips.location}
+          {/* {trips.location.charAt(0).toUpperCase() + trips.location.slice(1)} */}
+        </h1>
         <img src={travel} class={image}></img>
-        <h1>{trips.location}</h1>
         <div className={hidden}>
           <TripLocationDetails />
         </div>
