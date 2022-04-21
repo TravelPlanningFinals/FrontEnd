@@ -25,7 +25,7 @@ export default function TripLocationDetails() {
       <div className="group-members">
         {trips.guests.map((guest) => {
           return (
-            <div className="person" key={guest.id}>
+            <div className="person" key={guest.name}>
               <h2>{guest.name}</h2>
               <h2>Phone #: {guest.phone_number}</h2>
             </div>
