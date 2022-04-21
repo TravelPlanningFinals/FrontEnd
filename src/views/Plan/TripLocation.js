@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TripLocationDetails from '../../components/Plan/TripLocation/TripLocationDetails';
 import X from '../../assets/images/X.png';
-import { useUser } from '../../context/UserProvider';
 import travel from '../../assets/images/travel.png';
 import { useTrips } from '../../hooks/useTrips';
 
@@ -30,13 +29,7 @@ export default function TripLocation() {
     <div>
       <img onClick={minimize} src={X} class={XStyle}></img>
       <div onClick={handleClick} className={style}>
-        {/* pull from back end */}
-        {/* --- Context of City name goes here --- */}
-        <h1 className="padding">Your Trip to</h1>
-        <h1>
-          {trips.location}
-          {/* {trips.location.charAt(0).toUpperCase() + trips.location.slice(1)} */}
-        </h1>
+        <h1 className="padding">Your Trip to {trips.location}</h1>
         <img src={travel} class={image}></img>
         <div className={hidden}>
           <TripLocationDetails />
