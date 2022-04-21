@@ -19,7 +19,6 @@ export async function addFlights(
         tripsId,
       }),
     });
-    console.log('res', res);
     return res.json();
   } catch (error) {
     console.log('there was an error', error);
