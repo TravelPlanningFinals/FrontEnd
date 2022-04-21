@@ -3,8 +3,10 @@ import { useContext, createContext, useState } from 'react';
 const TripContext = createContext();
 
 const TripProvider = ({ children }) => {
+  const [guestEntry, setguestEntry] = useState([]);
+  const [startDateText, setStartDateText] = useState('');
   const [trips, setTrips] = useState([]);
-  const contextValue = { trips, setTrips };
+  const contextValue = { guestEntry, setguestEntry, trips, setTrips };
   return (
     <TripContext.Provider value={contextValue}>{children}</TripContext.Provider>
   );
