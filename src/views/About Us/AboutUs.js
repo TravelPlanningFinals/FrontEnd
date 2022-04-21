@@ -11,7 +11,7 @@ export default function AboutUs() {
     <div className="about-container">
       <h1>About Us</h1>
       <div className="about-container_desc">
-        <p>Meet the creators of Travel App!</p>
+        <p>Meet the creators of Let's Go!</p>
       </div>
       <div className="bio-container">
         <div className="bio-container_card">
