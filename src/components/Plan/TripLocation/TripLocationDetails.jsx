@@ -12,13 +12,13 @@ export default function TripLocationDetails() {
   if (loading) return <p>...loading</p>;
 
   return (
-   <>
+    <>
       <div className="tripSummary">
         <li>is in {count} days</li>
         <li>{user?.username} Will be your Tour guide</li>
         <img src={user?.avatar} />
         <li>
-          The Trip will begin on {trips.startDate} and end on {trips.endDate}
+          The Trip will begin on: {trips.startDate} and end on {trips.endDate}
         </li>
         <li>Your travel group is:</li>
       </div>
