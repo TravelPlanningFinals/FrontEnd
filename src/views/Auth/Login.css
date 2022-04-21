@@ -16,8 +16,7 @@
   margin: 1vw;
 }
 
-img {
-  width: 350px;
+.logo {
   height: 350px;
   margin-left: 40.3%;
   display: flex;
