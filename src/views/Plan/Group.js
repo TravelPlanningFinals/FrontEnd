@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import GroupDetails from '../../components/Plan/Group/GroupDetails';
 import X from '../../assets/images/X.png';
 import group from '../../assets/images/group.png';
+import GroupAddForm from '../../components/Plan/Group/GroupAddForm';
 
 export default function Group() {
   const [style, setStyle] = useState('group');
@@ -30,7 +30,7 @@ export default function Group() {
         <h1 className="padding">Group Page</h1>
         <img src={group} class={image}></img>
         <div className={hidden}>
-          <GroupDetails />
+          <GroupAddForm />
         </div>
       </div>
     </div>

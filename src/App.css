@@ -11,3 +11,7 @@ body {
   @apply bg-slate-800;
   background-color: #b3bfb8;
 }
+
+input {
+  margin: 3px;
+}
