@@ -12,29 +12,26 @@ export default function TripLocationDetails() {
   if (loading) return <p>...loading</p>;
 
   return (
-    <div className="tripCard">
-      <div>
-        <ul className="tripSummary">
-          <li>{user?.username} Will be your Tour guide</li>
-          <li>
-            <img src={user?.avatar} />
-          </li>
-          <li>
-            The Trip will begin on {trips.startDate} and end on {trips.endDate}
-          </li>
-          <li>
-            {trips.guests.map((guest) => {
-              return (
-                <div key={guest.id}>
-                  <h2>{guest.name}</h2>
-                  <h2>{guest.phone_number}</h2>
-                </div>
-              );
-            })}
-          </li>
-          <li>Days Until Trip: {count}</li>
-        </ul>
+    <>
+      <div className="tripSummary">
+        <li>is in {count} days</li>
+        <li>{user?.username} Will be your Tour guide</li>
+        <img src={user?.avatar} />
+        <li>
+          The Trip will begin on: {trips.startDate} and end on {trips.endDate}
+        </li>
+        <li>Your travel group is:</li>
       </div>
-    </div>
+      <div className="group-members">
+        {trips.guests.map((guest) => {
+          return (
+            <div className="person" key={guest.id}>
+              <h2>{guest.name}</h2>
+              <h2>Phone #: {guest.phone_number}</h2>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }

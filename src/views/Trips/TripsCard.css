@@ -6,7 +6,7 @@
 }
 
 .tripsList {
-  background-color: lightsteelblue;
+  background-color: #7e8d85;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@
 }
 
 .tripLink:hover {
-  background-color: pink;
+  background-color: #f0f7f4;
   text-decoration: underline;
   font-weight: bold;
   font-style: italic;

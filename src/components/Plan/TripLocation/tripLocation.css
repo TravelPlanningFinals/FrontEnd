@@ -25,9 +25,6 @@
   opacity: 0.5;
 }
 
-/* .computerSmall:hover {
-    opacity: 1;
-  } */
 /*AboutMe*/
 .tripInfo {
   display: flex;
@@ -43,7 +40,8 @@
   height: 602px;
   z-index: 1;
   transform: translate3d(6px, 6px, 0px);
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 5%;
   transition: 1s;
 }
 .tripInfo:hover h1 {
@@ -62,13 +60,15 @@
   position: absolute;
   width: 1634px;
   height: 614px;
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 3%;
   transition: 1s;
 }
 
 .tripInfoBig img {
-  border-radius: 20%;
-  max-height: 10rem;
+  border-radius: 10%;
+  border: 2px solid beige;
+  max-height: 15rem;
 }
 
 .tripInfoBig h1 {
@@ -84,20 +84,28 @@
   animation-duration: 2s;
 }
 
-.tripCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 li {
   display: flex;
   font-size: larger;
   font-weight: 700;
+  padding: 10px;
 }
 
 .tripSummary {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.group-members {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+  justify-content: space-around;
+}
+
+.person {
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 10px;
 }

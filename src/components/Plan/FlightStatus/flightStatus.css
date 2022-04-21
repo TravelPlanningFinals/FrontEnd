@@ -8,12 +8,13 @@
   height: 298px;
   z-index: 1;
   transform: translate3d(413px, 310px, 0px);
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 5%;
   transition: 1s;
 }
 
 .flightlist {
-  background-color: lightsteelblue;
+  background-color: #7e8d85;
   display: inline-flex;
   flex-direction: column;
   border: 2px solid #3c493f;
@@ -30,7 +31,7 @@
 
 .details:hover {
   font-size: x-large;
-  background-color: yellow;
+  background-color: #f0f7f4;
 }
 
 .flightform {
@@ -84,7 +85,8 @@
   position: absolute;
   width: 1634px;
   height: 614px;
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 5%;
   transition: 1s;
 }
 
@@ -100,21 +102,20 @@
   animation-duration: 2s;
 }
 
-/* .flightStatusImg {
-    display: flex;
-    position: absolute;
-    top: -5rem;
-    right: -57rem;
-    height: 30rem;
-  }
-  
-  .Xresume {
-    max-width: 65px;
-    position: absolute;
-    top: -7rem;
-    right: -101rem;
-  }
-   */
+.flightStatusImg {
+  display: flex;
+  position: absolute;
+  top: -5rem;
+  right: -57rem;
+  height: 30rem;
+}
+
+.Xresume {
+  max-width: 65px;
+  position: absolute;
+  top: -7rem;
+  right: -101rem;
+}
 
 .flightInputs {
   display: flex;

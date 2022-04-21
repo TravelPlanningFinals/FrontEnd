@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTrips } from '../../../hooks/useTrips';
-import { addLodging } from '../../../services/lodging';
+import { addLodging, deleteLodging } from '../../../services/lodging';
+import { getTripsById } from '../../../services/trips';
 import './lodging.css';
 
 export default function LodgingDetails() {
@@ -14,7 +15,7 @@ export default function LodgingDetails() {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zip, setZip] = useState('');
-  const { trips, loading } = useTrips();
+  const { trips, loading, setTrips } = useTrips();
   const tripsId = trips.id;
 
   const hanldeSubmit = async (e) => {
@@ -32,20 +33,42 @@ export default function LodgingDetails() {
       zip,
       tripsId
     );
+    const data = await getTripsById(tripsId);
+    setTrips(data);
+  };
+
+  const handleClick = async (id) => {
+    await deleteLodging(id);
+    const data = await getTripsById(tripsId);
+    setTrips(data);
   };
 
   if (loading) return <p>loading</p>;
 
+  console.log(trips.lodging);
+
   return (
     <>
-      {/* <h1>Lodging Details</h1>
+      <h1>Lodging Details</h1>
       {trips.lodging.map((lodge) => {
         return (
           <div key={lodge.id}>
             <p>{lodge.name_of_place}</p>
+            <p>{lodge.contactInfo}</p>
+            <p>{lodge.address1}</p>
+            <p>{lodge.address2}</p>
+            <p>{lodge.city}</p>
+            <p>{lodge.state}</p>
+            <p>{lodge.zip}</p>
+            <p>Checkin Date:{lodge.checkIn}</p>
+            <p>Checkin Date:{lodge.checkOut}</p>
+            <p>Price:{lodge.pricePerNight}/Night</p>
+            <button onClick={() => handleClick(lodge.lodging_id)}>
+              Delete
+            </button>
           </div>
         );
-      })} */}
+      })}
       <form>
         <input
           placeholder="Hotel Name"
@@ -124,32 +147,3 @@ export default function LodgingDetails() {
     </>
   );
 }
-
-//   return (
-//     <div>
-//       <LodgingForm
-//         nameOfPlace={nameOfPlace}
-//         setNameOfPlace={setNameOfPlace}
-//         contactInfo={contactInfo}
-//         setContactInfo={setContactInfo}
-//         pricePerNight={pricePerNight}
-//         setPricePerNight={setPricePerNight}
-//         checkIn={checkIn}
-//         setCheckIn={setCheckIn}
-//         checkOut={checkOut}
-//         setCheckOut={setCheckOut}
-//         address1={address1}
-//         setAddress1={setAddress1}
-//         address2={setAddress2}
-//         setAddress2={setAddress2}
-//         city={city}
-//         setCity={setCity}
-//         state={state}
-//         setState={setState}
-//         zip={zip}
-//         setZip={setZip}
-//         hanldeSubmit={hanldeSubmit}
-//       />
-//     </div>
-//   );
-// }
