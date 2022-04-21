@@ -1,9 +1,10 @@
-import React, { useState, Component } from 'react';
-import { addGuests } from '../../../services/guests';
+import React, { useState } from 'react';
+import { addGuests, deleteGuest } from '../../../services/guests';
 import { useTrips } from '../../../hooks/useTrips';
+import { getTripsById } from '../../../services/trips';
 
 export default function GroupAddForm() {
-  const { trips, loading } = useTrips();
+  const { trips, loading, setTrips } = useTrips();
   const tripsId = trips.id;
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -13,7 +14,14 @@ export default function GroupAddForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addGuests(name, email, phoneNumber, emergencyContact, tripsId);
-    window.location.reload('/');
+    const data = await getTripsById(id);
+    setTrips(data);
+  };
+
+  const handleClick = async (id) => {
+    await deleteGuest(id);
+    const data = await getTripsById(tripsId);
+    setTrips(data);
   };
   if (loading) return <p>loading</p>;
   return (
@@ -22,7 +30,7 @@ export default function GroupAddForm() {
       {trips.guests.map((guest) => {
         console.log(trips);
         return (
-          <div className="guestlist" key={guest.id}>
+          <div className="guestlist" key={guest.guest_id}>
             <p className="name">
               Name: <p className="details">{guest.name}</p>
             </p>
@@ -36,6 +44,7 @@ export default function GroupAddForm() {
               Emergency Contact:{' '}
               <p className="details">{guest.emergency_contact}</p>
             </p>
+            <button onClick={() => handleClick(guest.guest_id)}>Delete</button>
           </div>
         );
       })}
