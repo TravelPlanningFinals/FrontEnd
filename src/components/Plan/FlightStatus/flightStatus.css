@@ -12,6 +12,36 @@
   transition: 1s;
 }
 
+.flightlist {
+  background-color: lightsteelblue;
+  display: inline-flex;
+  flex-direction: column;
+  border: 2px solid #3c493f;
+  border-radius: 6px;
+  width: 30%;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.details {
+  text-decoration: underline;
+}
+
+.details:hover {
+  font-size: x-large;
+  background-color: yellow;
+}
+
+.flightform {
+  display: inline-flex;
+  flex-direction: column;
+  width: 30%;
+  /* align-items: center; */
+  text-align: center;
+  padding: 10px;
+}
+
 .flightStatus:hover h1 {
   opacity: 1;
 }

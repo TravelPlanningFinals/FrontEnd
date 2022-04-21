@@ -24,3 +24,16 @@ export async function addFlights(
     console.log('there was an error', error);
   }
 }
+
+export async function deleteFlight(id) {
+  const resp = await fetch(`${process.env.HEROKU_URL}/api/v1/flights/${id}`, {
+    method: 'DELETE',
+    credentials: 'include',
+    headers: { 'Content-type': 'application/json' },
+    mode: 'cors',
+    body: JSON.stringify({
+      id,
+    }),
+  });
+  return resp;
+}

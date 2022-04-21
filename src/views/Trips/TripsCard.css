@@ -1,9 +1,11 @@
 .trips {
   display: flex;
   flex-direction: row;
+  border-radius: 6px;
 }
 
 .tripsList {
+  background-color: lightsteelblue;
   display: flex;
   flex-direction: column;
   align-items: center;
