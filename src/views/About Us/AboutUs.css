@@ -25,10 +25,13 @@
   height: 300px;
   border-radius: 10px;
   margin-top: 10px;
+  margin-right: 132px;
 }
 
 .github {
   height: 30px;
+  width: 30px;
+  margin-right: 100px;
 }
 
 .about-container h1 {
