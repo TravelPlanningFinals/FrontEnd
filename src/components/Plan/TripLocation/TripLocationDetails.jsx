@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useUser } from '../../../context/UserProvider';
-import { useTrips } from '../../../hooks/useTrips';
-import { getTripsById } from '../../../services/trips';
 import CountDown from '../../../utils/countdown';
 import './tripLocation.css';
 
@@ -29,20 +27,11 @@ export default function TripLocationDetails({ mapData, loading }) {
           return (
             <div classname="Person" key={guest.guest_id}>
               <p>{guest.name}</p>
+              <p>{guest.phone_number}</p>
             </div>
           );
         })}
       </div>
-      {/* <div className="group-members">
-        {trips.guests.map((guest) => {
-          return (
-            <div className="person" key={guest.name}>
-              <h2>{guest.name}</h2>
-              <h2>Phone #: {guest.phone_number}</h2>
-            </div>
-          );
-        })}
-      </div> */}
     </>
   );
 }
