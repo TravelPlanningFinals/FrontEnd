@@ -85,13 +85,12 @@ export default function GroupAddForm() {
             setEmergencyContact(e.target.value);
           }}
         />
-        <button
-          class="bg-transparent hover:bg-blue-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
-          onClick={handleSubmit}
-        >
+      </form>
+      <div>
+        <button className="button2" onClick={handleSubmit}>
           Add
         </button>
-      </form>
+      </div>
     </>
   );
 }

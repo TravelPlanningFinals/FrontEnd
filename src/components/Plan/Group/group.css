@@ -1,6 +1,11 @@
 .group:hover h1 {
   opacity: 1;
 }
+.button2 {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 3px;
+}
 
 .guestlist {
   background-color: #7e8d85;
