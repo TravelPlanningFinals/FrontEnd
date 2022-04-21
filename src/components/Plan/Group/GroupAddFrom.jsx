@@ -14,7 +14,7 @@ export default function GroupAddForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addGuests(name, email, phoneNumber, emergencyContact, tripsId);
-    const data = await getTripsById(id);
+    const data = await getTripsById(tripsId);
     setTrips(data);
   };
 
