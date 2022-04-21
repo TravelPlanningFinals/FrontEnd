@@ -5,7 +5,7 @@ import './Login.css';
 export default function Login() {
   return (
     <>
-      <img src={logo} />
+      <img className="logo" src={logo} />
       <div className="login">
         <h2 className="signin-message">Sign in with Github</h2>
 
