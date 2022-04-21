@@ -88,10 +88,7 @@ export default function FlightStatusDetails() {
             setFlightNumber(e.target.value);
           }}
         />
-        <button
-          class="bg-transparent hover:bg-blue-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5 width-25"
-          onClick={handleSubmit}
-        >
+        <button className="add-button" onClick={handleSubmit}>
           Add New Flight Information
         </button>
       </form>
