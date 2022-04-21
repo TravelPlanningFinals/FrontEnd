@@ -52,14 +52,6 @@
   opacity: 0.4;
 }
 
-/* .ermImg {
-    position: absolute;
-    height: 140%;
-    right: 12%;
-    top: 0%;
-    border: 2px solid rgb(92, 91, 91);
-  } */
-
 /* Leave below if we go back to 4 tiles */
 /* .group {
   display: flex;
@@ -123,14 +115,4 @@
   transition: 1.5s;
   animation-name: fadeIn;
   animation-duration: 2s;
-}
-/* 
-.groupInputs {
-  display: flex;
-  flex-direction: column;
-} */
-
-.emailInputs {
-  display: flex;
-  flex-direction: column;
 }

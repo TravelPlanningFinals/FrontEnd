@@ -22,7 +22,7 @@ export default function TripsCard() {
             <div className="tripsList" key={trips.id}>
               <Link className="tripLink" to={`/plan/${trips.id}`}>
                 <p className="tripLocation">
-                  Destination:{' '}
+                  Destination:
                   {trips.location.charAt(0).toUpperCase() +
                     trips.location.slice(1)}
                 </p>
