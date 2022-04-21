@@ -12,7 +12,6 @@
   border-radius: 5%;
   transition: 1s;
 }
-
 .entertainmentInfo:hover h1 {
   opacity: 1;
 }
