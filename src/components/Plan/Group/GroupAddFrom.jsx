@@ -32,7 +32,6 @@ export default function GroupAddForm() {
       <form>
         <div class="groupCard">
           <div class="groupInputs">
-            {/* Turn these into H2s, with an edit button */}
             <h1>First Name</h1>
             <input
               placeholder="First Name"

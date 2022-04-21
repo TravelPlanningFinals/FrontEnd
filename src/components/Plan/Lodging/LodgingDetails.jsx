@@ -36,7 +36,7 @@ export default function LodgingDetails() {
     fetchData();
   }, [params.id]);
 
-  const hanldeSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       const redir = await updateLodging(
@@ -81,7 +81,7 @@ export default function LodgingDetails() {
         setState={setState}
         zip={zip}
         setZip={setZip}
-        hanldeSubmit={hanldeSubmit}
+        handleSubmit={handleSubmit}
       />
     </div>
   );
