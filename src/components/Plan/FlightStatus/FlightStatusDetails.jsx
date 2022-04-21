@@ -16,27 +16,32 @@ export default function FlightStatusDetails() {
     await addFlights(airline, departure, arrival, flightNumber, tripsId);
     window.location.reload('/');
   };
-
   if (loading) return <p>loading</p>;
 
   return (
     <>
       {trips.flights.map((flight) => {
         return (
-          <div className="flightlist" key={flight.id}>
-            <p className="flightdetails">
-              Airline: <p className="details">{flight.airline}</p>
-            </p>
-            <p className="flightdetails">
-              Departure: <p className="details">{flight.departure}</p>
-            </p>
-            <p className="flightdetails">
-              Arrival: <p className="details">{flight.arrival}</p>
-            </p>
-            <p className="flightdetails">
-              Flight Number: <p className="details">{flight.flight_number}</p>
-            </p>
-          </div>
+          <>
+            <button>Edit</button>
+            <button onClick={() => deleteFlight(flight.flight_id)}>
+              Delete
+            </button>
+            <div className="flightlist" key={flight.flight_id}>
+              <p className="flightdetails">
+                Airline: <p className="details">{flight.airline}</p>
+              </p>
+              <p className="flightdetails">
+                Departure: <p className="details">{flight.departure}</p>
+              </p>
+              <p className="flightdetails">
+                Arrival: <p className="details">{flight.arrival}</p>
+              </p>
+              <p className="flightdetails">
+                Flight Number: <p className="details">{flight.flight_number}</p>
+              </p>
+            </div>
+          </>
         );
       })}
       <form className="flightform">
