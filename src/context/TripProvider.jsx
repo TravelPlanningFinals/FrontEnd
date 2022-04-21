@@ -4,7 +4,6 @@ const TripContext = createContext();
 
 const TripProvider = ({ children }) => {
   const [guestEntry, setguestEntry] = useState([]);
-  const [startDateText, setStartDateText] = useState('');
   const [trips, setTrips] = useState([]);
   const contextValue = { guestEntry, setguestEntry, trips, setTrips };
   return (

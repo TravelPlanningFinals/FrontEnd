@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useTrips } from '../../../hooks/useTrips';
-import { addFlights } from '../../../services/flights';
+import { addFlights, deleteFlight } from '../../../services/flights';
 import './flightStatus.css';
 
 export default function FlightStatusDetails() {
   const { trips, loading } = useTrips();
-  console.log('trips.lodging', trips.lodging);
   const tripsId = trips.id;
   const [airline, setAirline] = useState('');
   const [departure, setDeparture] = useState('');
@@ -17,12 +16,24 @@ export default function FlightStatusDetails() {
     await addFlights(airline, departure, arrival, flightNumber, tripsId);
     window.location.reload('/');
   };
+
+  // const handleDelete = async (e) => {
+  //   e.preventDefault();
+  //   await deleteFlight(trips.flights.id);
+  // };
+
   if (loading) return <p>loading</p>;
+
   return (
     <>
       {trips.flights.map((flight) => {
+        console.log('flight.flight_id', flight.flight_id);
         return (
-          <div className="flightlist" key={flight.id}>
+            <button>Edit</button>
+            <button onClick={() => deleteFlight(flight.flight_id)}>
+              Delete
+            </button>
+          <div className="flightlist" key={flight.flight_id}>
             <p className="flightdetails">
               Airline: <p className="details">{flight.airline}</p>
             </p>
@@ -35,6 +46,7 @@ export default function FlightStatusDetails() {
             <p className="flightdetails">
               Flight Number: <p className="details">{flight.flight_number}</p>
             </p>
+
           </div>
         );
       })}
