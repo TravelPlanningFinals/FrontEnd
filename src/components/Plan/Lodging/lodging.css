@@ -12,7 +12,32 @@
   border-radius: 5%;
   transition: 1s;
 }
-
+.lodginglist {
+  background-color: #7e8d85;
+  display: inline-flex;
+  flex-direction: column;
+  border: 2px solid #3c493f;
+  border-radius: 6px;
+  width: 20vw;
+  margin: 12px;
+  align-items: center;
+  text-align: center;
+  /* padding: 10px; */
+}
+.button {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 3px;
+}
+.add-button {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 3px;
+  margin-top: 25px;
+}
+button:hover {
+  color: #a2e3c4;
+}
 .lodgingStyle:hover h1 {
   opacity: 1;
 }
