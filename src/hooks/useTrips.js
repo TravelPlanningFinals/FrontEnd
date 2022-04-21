@@ -10,7 +10,6 @@ export function useTrips() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getTripsById(id);
-      console.log('data', data);
       setTrips(data);
       setLoading(false);
     };
