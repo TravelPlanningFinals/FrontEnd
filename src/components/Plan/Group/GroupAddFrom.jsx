@@ -44,7 +44,12 @@ export default function GroupAddForm() {
               Emergency Contact:{' '}
               <p className="details">{guest.emergency_contact}</p>
             </p>
-            <button onClick={() => handleClick(guest.guest_id)}>Delete</button>
+            <button
+              className="delete-button"
+              onClick={() => handleClick(guest.guest_id)}
+            >
+              Delete
+            </button>
           </div>
         );
       })}
