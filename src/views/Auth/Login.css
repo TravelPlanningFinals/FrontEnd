@@ -7,11 +7,19 @@
   width: 26vw;
   margin-left: 37vw;
   margin-right: 37vw;
-  margin-top: 10vw;
+  margin-bottom: 15vw;
   align-items: center;
   text-align: center;
 }
 
 .signin-message {
   margin: 1vw;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+  margin-left: 40.3%;
+  display: flex;
+  align-items: center;
 }
