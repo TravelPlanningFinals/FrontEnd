@@ -20,7 +20,7 @@ export default function TripLocationDetails() {
             <img src={user?.avatar} />
           </li>
           <li>
-            The Trip will begin on {trips.startDate} and end on {trips.endDate}
+            The Trip will begin on: {trips.startDate} and end on {trips.endDate}
           </li>
           <li>
             {trips.guests.map((guest) => {

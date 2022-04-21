@@ -46,7 +46,8 @@
   height: 300px;
   z-index: 1;
   transform: translate3d(413px, 6px, 0px);
-  background-color: #e3d1a7;
+  background-color: #f0f7f4;
+  border-radius: 6%;
   transition: 1s;
   font-size: xx-large;
   font-weight: 700;
