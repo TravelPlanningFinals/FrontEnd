@@ -17,5 +17,5 @@ export function useTrips() {
     fetchData();
   }, [id]);
 
-  return { trips, loading };
+  return { trips, loading, setTrips, setLoading };
 }
