@@ -17,6 +17,10 @@ export default function FlightStatusDetails() {
     await addFlights(airline, departure, arrival, flightNumber, tripsId);
     const data = await getTripsById(tripsId);
     setTrips(data);
+    setAirline('');
+    setDeparture('');
+    setArrival('');
+    setFlightNumber('');
   };
 
   const handleClick = async (id) => {
@@ -28,14 +32,11 @@ export default function FlightStatusDetails() {
   if (loading) return <p>loading</p>;
 
   return (
-    <>
-      {trips.flights.map((flight) => {
-        return (
-          <div key={flight.flight_id}>
-            <button onClick={() => handleClick(flight.flight_id)}>
-              Delete
-            </button>
-            <div className="flightlist">
+    <div className="flight-page">
+      <div className="flights">
+        {trips.flights.map((flight) => {
+          return (
+            <div className="flightlist" key={flight.flight_id}>
               <p className="flightdetails">
                 Airline: <p className="details">{flight.airline}</p>
               </p>
@@ -48,10 +49,16 @@ export default function FlightStatusDetails() {
               <p className="flightdetails">
                 Flight Number: <p className="details">{flight.flight_number}</p>
               </p>
+              <button
+                className="delete-button"
+                onClick={() => handleClick(flight.flight_id)}
+              >
+                Delete
+              </button>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
       <form className="flightform">
         <input
           placeholder="Airline"
@@ -81,13 +88,13 @@ export default function FlightStatusDetails() {
             setFlightNumber(e.target.value);
           }}
         />
+        <button
+          class="bg-transparent hover:bg-blue-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5 width-25"
+          onClick={handleSubmit}
+        >
+          Add New Flight Information
+        </button>
       </form>
-      <button
-        class="bg-transparent hover:bg-blue-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-5"
-        onClick={handleSubmit}
-      >
-        Add New Flight Information{' '}
-      </button>
-    </>
+    </div>
   );
 }
