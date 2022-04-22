@@ -17,6 +17,10 @@ export default function GroupAddForm() {
     await addGuests(name, email, phoneNumber, emergencyContact, tripsId);
     const data = await getTripsById(tripsId);
     setTrips(data);
+    setName('');
+    setEmail('');
+    setPhoneNumber('');
+    setEmergencyContact('');
   };
 
   const handleClick = async (id) => {
@@ -44,7 +48,10 @@ export default function GroupAddForm() {
                 Emergency Contact:
                 <p className="details">{guest.emergency_contact}</p>
               </p>
-              <button onClick={() => handleClick(guest.guest_id)}>
+              <button
+                className="delete-button"
+                onClick={() => handleClick(guest.guest_id)}
+              >
                 Delete
               </button>
             </div>
