@@ -35,6 +35,16 @@ export default function LodgingDetails() {
     );
     const data = await getTripsById(tripsId);
     setTrips(data);
+    setNameOfPlace('');
+    setContactInfo('');
+    setPricePerNight('');
+    setCheckIn('');
+    setCheckOut('');
+    setAddress1('');
+    setAddress2('');
+    setCity('');
+    setState('');
+    setZip('');
   };
 
   const handleClick = async (id) => {

@@ -3,13 +3,13 @@ import { Route } from 'react-router-dom';
 import { useUser } from '../../context/UserProvider';
 
 export default function PrivateRoute({ children, ...routeProps }) {
-  const { userInput } = useUser();
+  const { user } = useUser();
   return (
     <>
       <Route
         {...routeProps}
         render={({ location }) =>
-          !userInput ? (
+          user ? (
             children
           ) : (
             <Redirect to={{ pathname: '/', state: { from: location } }} />
