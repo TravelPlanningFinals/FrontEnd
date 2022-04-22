@@ -3,19 +3,23 @@ import TripLocationDetails from '../../components/Plan/TripLocation/TripLocation
 import X from '../../assets/images/X.png';
 import travel from '../../assets/images/travel.png';
 import { useTrips } from '../../hooks/useTrips';
+import { getTripsById } from '../../services/trips';
 
 export default function TripLocation() {
   const [style, setStyle] = useState('tripInfo');
   const [hidden, setHidden] = useState('hidden');
   const [XStyle, setXStyle] = useState('hidden');
   const [image, setImage] = useState('travel');
-  const { trips } = useTrips();
+  const { trips, loading, setTrips } = useTrips();
+  const tripsId = trips.id;
 
-  function handleClick() {
+  async function handleClick() {
     setStyle('tripInfoBig');
     setHidden(null);
     setXStyle('X');
     setImage('hidden');
+    const data = await getTripsById(tripsId);
+    setTrips(data);
   }
 
   function minimize() {
@@ -32,7 +36,7 @@ export default function TripLocation() {
         <h1 className="padding">Begin Your Trip to {trips.location}</h1>
         <img src={travel} class={image}></img>
         <div className={hidden}>
-          <TripLocationDetails />
+          <TripLocationDetails mapData={trips} loading={loading} />
         </div>
       </div>
     </div>

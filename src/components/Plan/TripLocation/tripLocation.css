@@ -69,8 +69,6 @@
   border-radius: 10%;
   border: 8px solid #b3d1c2;
   max-height: 15rem;
-  margin-right: 40%;
-  width: 250px;
 }
 
 .tripInfoBig h1 {
@@ -110,4 +108,5 @@ li {
   border: 2px solid black;
   border-radius: 6px;
   padding: 10px;
+  margin: 10px;
 }
