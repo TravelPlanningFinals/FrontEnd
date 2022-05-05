@@ -1,18 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
 import './TripDetails.css';
-import { useUser } from '../../context/UserProvider';
 import { addTrips } from '../../services/trips';
-
+import { useUser } from '../../hooks/useUser';
 export default function TripDetails() {
   const [locationText, setLocationText] = useState('');
   const [startDateText, setStartDateText] = useState('');
   const [endDateText, setEndDateText] = useState('');
-  const { loading } = useUser();
+  const { user, loading } = useUser();
+  const userId = user.id;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addTrips(locationText, startDateText, endDateText);
+    await addTrips(locationText, startDateText, endDateText, userId);
     window.location.replace('/trips');
   };
 

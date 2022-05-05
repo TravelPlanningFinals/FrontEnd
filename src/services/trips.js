@@ -1,4 +1,4 @@
-export async function addTrips(location, startDate, endDate) {
+export async function addTrips(location, startDate, endDate, userId) {
   try {
     const res = await fetch(`${process.env.HEROKU_URL}/api/v1/trips`, {
       method: 'POST',
@@ -9,6 +9,7 @@ export async function addTrips(location, startDate, endDate) {
         location,
         startDate,
         endDate,
+        userId,
       }),
     });
     return res.json();
